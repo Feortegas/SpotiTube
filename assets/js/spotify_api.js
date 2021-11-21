@@ -1,6 +1,9 @@
-const clientId = '';
-const clientSecret = '';
+const clientId = '742933e984264544aeda659ff45f37e3';
+const clientSecret = '77e403e233fb4a6cb47924a7a9a7d6d0';
 var searchFormEl = document.querySelector("#user-form");
+var h1El = document.querySelector("#playlist-name");
+var coverEl = document.querySelector("#playlist-cover");
+var tracksEl = document.querySelector("#song-list");
 var playListId = "";
 
 
@@ -42,6 +45,7 @@ var _getPlaylist = function(_token, _playListId) {
         if(response.ok) {
             response.json().then(function(data) {
                 console.log(data);
+                _createTrackList(data);
             });
         } else {
             alert("Error: whatever the error is");
@@ -75,6 +79,23 @@ var _searchForItem = function(_token, _theSearch) {
     
 };
 
+// create track list in the html dynamicaly
+var _createTrackList = function(playlist) {
+    // update h1 element with Playlist name
+    h1El.textContent = playlist.name;
+    coverEl.setAttribute("src", playlist.images[0].url);
+
+    // dynamically greate track list
+    for (let index = 0; index < playlist.tracks.total; index++) {
+        
+        var trackName = playlist.tracks.items[index].track.name;
+
+        var trackEl = document.createElement("li");
+        trackEl.textContent = trackName;
+        tracksEl.appendChild(trackEl);
+    }
+};
+
 // Form event handler - TEMPORARY HTML
 var formSubmitHandler = function(event) {
     // prevent page from refreshing
@@ -93,7 +114,5 @@ var formSubmitHandler = function(event) {
             alert("Pleasej enter a valid Artist name");
         }
 };
-
-// getSpotifyApiData();
 
 searchFormEl.addEventListener("submit", formSubmitHandler);
