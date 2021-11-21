@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/basscss-responsive-margin@1.1.0/css/responsive-margin.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet" />
+  <title>Document</title>
 </head>
+
 <body>
-    <form class="col-4 mt-2" id="form-sidebar">
-        <div class="form-group">
-            <label for="form-search-artist" class="label">Search for an Artist:</label>
-            <input type="text" class="form-control" id="form-search-artist">
+  <navbar>
+    <div class="container">
+      <header class="head">
+        <h1><strong>SpotiTube</strong></h1>
+      </header>
+
+      <!-- <div class="row"> -->
+
+      <section>
+        <form id="user-form">
+          <h5>Search Your Favorite Musical Artist</h5>
+          <label class="form-label" for="artistId"></label>
+          <input name="artistId" id="artistId" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn-info">Search</button>
+        </form>
+      </section>
+    </div>
+  </navbar>
+  <!--Sidedbar-->
+  <main class="">
+    <div class="clearfix border">
+      <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
+        <div class="flex flex-wrap content-stretch border">
+          <div style="min-height: 128px">
+            <div class="md-col md-col-3 flex-border">
+              <h1 class="left">This is{Artist's Name}</h1>
+              <ul id="song-list">
+                <!-- <li> to be put in dynamically for song search history -->
+              </ul>
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Search</button>
-    </form>
-    
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/spotify_api.js"></script>
+      </div>
+      <!--  video column-->
+      <div class="clearfix border">
+        <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
+          <h1 class="center-align">Video's</h1>
+        </div>
+        <div id="wrapper">
+          <div id="video-0" class="container"></div>
+
+          <div id="video-1" class="container"></div>
+
+          <div id="video-2" class="container"></div>
+
+          <div id="video-3" class="container"></div>
+
+          <div id="video-4" class="container"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="col-12"></div>
+  
+      </footer>
+  </main>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/spotify_api.js"></script>
 </body>
+
 </html>
