@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./app/css/style.css" />
-    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-  <div class="container" flex itmes-center-border>
-      <div class="flex items-center border">
-        <div class="block p1">
-        </div>
-          <form >
-            <input type="search">
-          </form> 
-            <h1 class="flex m1-auto"><strong>SpotiTube</strong></h1>
-        
-      </div>
-      <div class="fixed z2 top-0 left-0 right-0 p2 white bg-black">
-        Aritists Name:
-      </div>
-      <div class="flex flex-wrap col-4 border" style="min-height: 500px">
-            <h1>Artistis</h1>
-        <div class="flex flex-colum">
-            <ul class="list-rest">
-                <li class="block mr1">Bio</li>
-                <li class="block mr1">Albums</li>
-                <li class="block mr1">Songs</li>
-            </ul>
-       </div>
-      </div>
-      <!--<div class="clearfix mxn2 border">-->
-        <div class="col-8 px2 mx-auto">
-          <div class="border">Video</div>
-        </div>
-      </div>
 
-    <script src="./assets/js/script.js"></script>
-  </div>  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/basscss-responsive-margin@1.1.0/css/responsive-margin.css" rel="stylesheet">
+  <link href="test.css" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <navbar>
+    <div class="container">
+      <header class="head">
+        <h1><strong>SpotiTube</strong></h1>
+      </header>
+
+      <!-- <div class="row"> -->
+
+      <section>
+        <form id="user-form">
+          <h5>Search Your Favorite Musical Artist</h5>
+          <label class="form-label" for="artistId"></label>
+          <input name="artistId" id="artistId" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn-info">Search</button>
+        </form>
+      </section>
+    </div>
+  </navbar>
+  <!--Sidedbar-->
+  <main class="">
+    <div class="clearfix border">
+      <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
+        <div class="flex flex-wrap content-stretch border">
+          <div style="min-height: 128px">
+            <div class="md-col md-col-3 flex-border">
+              <h1 class="left">This is{Artist's Name}</h1>
+              <ul id="song-list">
+                <!-- <li> to be put in dynamically for song search history -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  video column-->
+      <div class="clearfix border">
+        <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
+          <h1 class="center-align">Video's</h1>
+        </div>
+        <div id="wrapper">
+          <div id="video-0" class="container"></div>
+
+          <div id="video-1" class="container"></div>
+
+          <div id="video-2" class="container"></div>
+
+          <div id="video-3" class="container"></div>
+
+          <div id="video-4" class="container"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="col-12"></div>
+  
+      </footer>
+  </main>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

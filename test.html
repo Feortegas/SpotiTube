@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<link
+      href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">-->
+  <!-- <link href="https://unpkg.com/@getbase/base/core.css" rel="stylesheet" />
+    Might Need these links to get base working-
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/code.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/forms.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/tables.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/typography.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/headings.css">
+     and these links-
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/containers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/horizontal-spacers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/vertical-spacers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/spacers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/display-helpers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/flex-helpers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/position-helpers.css">
+    <link rel="stylesheet" href="https://unpkg.com/@getbase/base/typography-helpers.css">-->
+<!--Consises Css-->
+    <link rel="stylesheet" href="https://cdn.concisecss.com/concise.css">
+    <link rel="stylesheet" href="https://cdn.concisecss.com/concise-ui/concise-ui.css">
+    <link rel="stylesheet" href="https://cdn.concisecss.com/concise-utils/v1.0/concise-utils.css">
+
+    <link href="test.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="card">
+      <div class="container">
+        <header class="head">
+            <h1><strong>SpotiTube</strong></h1>
+        </header>
+        <!-- <div class="row"> -->
+        <!--sidebar-->
+        <section>
+            <form id="user-form">
+                <h5>Search Your Favorite Musical Artist</h5>
+                <label class="form-label" for="artistId"></label>
+                <input name="artistId" id="artistId" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn-info">Search</button>
+            </form>
+        </section>
+       </div>
+    </nav>
+        <!--thumbnail area-->
+     <main grid="">
+         <artical column="3"></artical>
+        <div class="grid">
+         <div class="col-6 pull-col-4">
+              <!-- <div class="overflow-auto">-->
+                    <div class="card">
+                        <div class="container">
+                            <div class="flex flex-wrap content-stretch border">
+                                <div style="min-height: 128px">
+                                    <div class="md-cols-3 md-col-3 flex-border">
+                                        <h1 class="">This is{}</h1>
+
+                                        <ul id="song-list">
+                                            <!-- <li> to be put in dynamically for song search history -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               <!--</div><main grid>
+                    <article column='8'>…</article>
+                    left of playlist-->
+            <section grid="column">
+                  <div class="container">
+                    <div id="video md-col md-col-9 border">
+                        <div class="video-title">
+                            <h1 class="md-col md-col-9 flex-border">Video's</h1>
+                        </div>
+                        <div id="wrapper">
+                            <div id="video-0" class="container"></div>
+
+                            <div id="video-1" class="container"></div>
+
+                            <div id="video-2" class="container"></div>
+
+                            <div id="video-3" class="container"></div>
+
+                            <div id="video-4" class="container"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>   
+        <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
