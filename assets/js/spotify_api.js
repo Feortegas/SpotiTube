@@ -1,5 +1,5 @@
-const clientId = '';
-const clientSecret = '';
+const clientId = '742933e984264544aeda659ff45f37e3';
+const clientSecret = 'fad863044e2045feb5d32139ded127c3';
 var searchFormEl = document.querySelector("#user-form");
 var h1El = document.querySelector("#playlist-name");
 var coverEl = document.querySelector("#playlist-cover");
