@@ -1,5 +1,5 @@
-const clientId = '742933e984264544aeda659ff45f37e3';
-const clientSecret = '77e403e233fb4a6cb47924a7a9a7d6d0';
+const clientId = '';
+const clientSecret = '';
 var searchFormEl = document.querySelector("#user-form");
 var h1El = document.querySelector("#playlist-name");
 var coverEl = document.querySelector("#playlist-cover");
@@ -24,7 +24,7 @@ var getSpotifyApiData = function(theSearch) {
                 _searchForItem(data.access_token, theSearch);
             });
         } else {
-            alert("Error: whatever the error is");
+            alert("Error: unable to load data from Spotify");
         }
         })
         .catch(function(error) {
@@ -48,7 +48,7 @@ var _getPlaylist = function(_token, _playListId) {
                 _createTrackList(data);
             });
         } else {
-            alert("Error: whatever the error is");
+            alert("Error: unable to load data from Spotify");
         }
       })
       .catch(function(error) {
