@@ -1,6 +1,6 @@
 const clientId = '';
 const clientSecret = '';
-var searchFormEl = document.querySelector("#form-sidebar");
+var searchFormEl = document.querySelector("#user-form");
 var playListId = "";
 
 
@@ -80,7 +80,7 @@ var formSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
 
-        var artistNameEl = document.querySelector("#form-search-artist");
+        var artistNameEl = document.querySelector("#artistId");
 
         // get value from input element
         var artistName = artistNameEl.value.trim();
