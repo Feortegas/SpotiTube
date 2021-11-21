@@ -1,12 +1,11 @@
-const clientId = '742933e984264544aeda659ff45f37e3';
-const clientSecret = 'aa6f5be1e16f4f048536bec5198d8a75';
-const playlistId = '37i9dQZF1DX4wta20PHgwo';
+const clientId = '';
+const clientSecret = '';
+var searchFormEl = document.querySelector("#form-sidebar");
+var playListId = "";
 
 
-
-var getSpotifyApiData = function() {
-    
-    const spotify_api_url = 'https://api.spotify.com/v1/playlists/' + playlistId;
+// Get Token
+var getSpotifyApiData = function(theSearch) {
 
     // get token
     const token = fetch('https://accounts.spotify.com/api/token', {
@@ -19,8 +18,7 @@ var getSpotifyApiData = function() {
     }).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data.access_token);
-                _getPlaylist(data.access_token);
+                _searchForItem(data.access_token, theSearch);
             });
         } else {
             alert("Error: whatever the error is");
@@ -30,16 +28,14 @@ var getSpotifyApiData = function() {
             alert("Error: unable to connect to Spotify");
         });
 
-    // const data = token.json();
-    // token =  data.access_token;
-
-    
 };
 
 // get playlist
-var _getPlaylist = function(_token) {
+var _getPlaylist = function(_token, _playListId) {
 
-    const playlists = fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DX4wta20PHgwo", {
+    console.log("Line 37: " + playListId);
+
+    const playlists = fetch("https://api.spotify.com/v1/playlists/" + _playListId, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + _token}
     }).then(function(response) {
@@ -55,8 +51,49 @@ var _getPlaylist = function(_token) {
           alert("Error: unable to connect to Spotify");
       });
 
-    console.log(playlists);
-
 };
 
-getSpotifyApiData();
+// Search for Item
+var _searchForItem = function(_token, _theSearch) {
+
+    const result = fetch('https://api.spotify.com/v1/search?q=' + _theSearch + '&type=playlist&limit=1', {
+        method: 'GET',
+        headers: { 'Authorization' : 'Bearer ' + _token}
+    }).then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                playListId = data.playlists.items[0].id;
+                _getPlaylist(_token, playListId);
+            });
+        } else {
+            alert("Error: Playlist not found.");
+        }
+    })
+    .catch(function(error) {
+        alert("Error: unable to connect to Spotify");
+    });
+    
+};
+
+// Form event handler - TEMPORARY HTML
+var formSubmitHandler = function(event) {
+    // prevent page from refreshing
+    event.preventDefault();
+
+        var artistNameEl = document.querySelector("#form-search-artist");
+
+        // get value from input element
+        var artistName = artistNameEl.value.trim();
+
+        if (artistName) {
+            getSpotifyApiData(artistName);
+            artistNameEl.value = "";
+        }
+        else {
+            alert("Pleasej enter a valid Artist name");
+        }
+};
+
+// getSpotifyApiData();
+
+searchFormEl.addEventListener("submit", formSubmitHandler);
