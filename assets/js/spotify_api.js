@@ -85,14 +85,20 @@ var _createTrackList = function(playlist) {
     h1El.textContent = playlist.name;
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
-    for (let index = 0; index < 3; index++) {
+    //playlist.tracks.total
+    for (let index = 0; index < 5; index++) {
         console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
         var trackEl = document.createElement("li");
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
-        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
+
+        // ASK TA TONIGHT!
+        // setTimeout(function() {
+            getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
+        // }, 5000);
+
     }
 };
 
