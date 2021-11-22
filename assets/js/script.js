@@ -6,6 +6,10 @@ var searchInput = document.querySelector('#artistId')
 //`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channel}&maxResults=5&order=date&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`
 
 
+
+
+
+
 // Get Artist *working*
 var getData = function(artist, song, index) {
     // Format the YouTube API url
@@ -43,8 +47,5 @@ var getData = function(artist, song, index) {
       });
   };
 
-// search YouTube API for Videos by Channel Name and Embeddable videos only
-var searchByChannelName = function() {
-
-};
+  
 
