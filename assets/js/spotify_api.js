@@ -36,8 +36,6 @@ var getSpotifyApiData = function(theSearch) {
 // get playlist
 var _getPlaylist = function(_token, _playListId) {
 
-    console.log("Line 37: " + playListId);
-
     const playlists = fetch("https://api.spotify.com/v1/playlists/" + _playListId, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + _token}
