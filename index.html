@@ -1,175 +1,86 @@
-<!-- <!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/basscss-responsive-margin@1.1.0/css/responsive-margin.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body>
-    <header class="head">
-      <h1>SpotiTube</h1>
-    </header>
 
-    <main>
-      <section>
+  <body>
+    <nav class="clearfix white bg-black">
+      <div class="sm-col">
+        <h1><strong>SpotiTube</strong></h1>
+      </div>
+      <div class="sm-col-right">
         <form id="user-form">
           <h5>Search Your Favorite Musical Artist</h5>
-          <label class="form-label" for="channelId"></label>
+          <label class="form-label" for="artistId"></label>
           <input
-            name="channelId"
-            id="channelId"
+            name="artistId"
+            id="artistId"
             type="text"
             autofocus="true"
-            class="form-input col-12 mb-3"
+            class="form-input"
           />
           <button type="submit" class="btn-info">Search</button>
         </form>
-      </section>
-      <br />
-      <br />
-      <br />
-      <div id="wrapper">
-        <div id="video-0" class="container">
-          
-        </div>
-
-        <div id="video-1" class="container">
-        
-        </div>
-
-        <div id="video-2" class="container">
-         
-        </div>
-
-        <div id="video-3" class="container">
-       
-        </div>
-
-        <div id="video-4" class="container">
-   
-        </div>
       </div>
-    </main>
+    </nav>
+    <div id="wrapper" class="clearfix border flex-auto">
+      <section class="col-12 lg-col-2 left flex-first border">
+        <h4 id= "playlist-name">Track Title</h4>
+
+        <div class="card">
+          <div class="card-body">
+              <img id= "playlist-cover" >
+            <ol id="song-list">
+             <!-- Dynamically appending <li> -->
+            </ol>
+          </div>
+        </div>
+      </section>
+      <main id="mainBody" class="flex flex-column" style="min-height: 60vh">
+        <div class="vid-container border lg-col-12 col border flex-auto p2">
+          <h2>Artist and Track Name</h2>
+            <div id= "videowrapper" class= "flex flex-wrap">
+            <div id= "video-0" class= "container inline"></div>
+            <div id= "video-1" class= "container inline"></div>
+            <div id= "video-2" class= "container inline"></div>
+            <div id= "video-3" class= "container inline"></div>
+            <div id= "video-4" class= "container inline"></div>
+            <div id= "video-5" class= "container inline"></div>
+            <!-- <div id= "video-6" class= "container inline"></div> 
+            <div id= "video-7" class= "container inline"></div>
+            <div id= "video-8" class= "container inline"></div>
+            <div id= "video-9" class= "container inline"></div>
+            <div id= "video-10" class= "container inline"></div>
+            <div id= "video-11" class= "container inline"></div>
+            <div id= "video-12" class= "container inline"></div>-->
+
+            </div>
+        </div>
+
+        <footer class="col-12 p2 border">
+          <h2 class="m0">Group 007</h2>
+        </footer>
+      </main>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/spotify_api.js"></script>
   </body>
-</html>-->
-
-
-   
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/basscss-responsive-margin@1.1.0/css/responsive-margin.css" rel="stylesheet">
-  <link href="./assets/css/style.css" rel="stylesheet" />
-  <title>Document</title>
-</head>
-
-<body>
-        <nav class="clearfix white bg-black">  
-        <div class="sm-col">
-        <h1><strong>SpotiTube</strong></h1>
-        </div>
-        <div class="sm-col-right">
-        <form id="user-form">
-          <h5>Search Your Favorite Musical Artist</h5>
-          <label class="form-label" for="artistId"></label>
-          <input name="artistId" id="artistId" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn-info">Search</button>
-        </form>
-        </div>
-      </nav>
-      <div id= "wrapper" class= "clearfix border flex-auto">
-      <section class= "col-12 lg-col-2 left flex-first border">
-            <h4> Track Title</h4>
-      
-        
-        <div class="card">
-            <div class="card-body">
-              <ol id= "song-list">
-                <li>Track 1</li>
-                <li>Track 2</li>
-                <li>Track 3</li>
-                <li>Track 4</li>
-                <li>Track 5</li>
-
-
-              </ol>
-            </div>
-          </div>
-    </section>
-        <main id= "mainBody" class="flex flex-column" style="min-height:60vh">
-            <div class= "border lg-col-12 col border flex-auto p2">
-                <h2> Artist and Track Name</h2>
-                <div class= "vid-container">
-
-                    <h5> Place for thumbnail </h5>
-    
-                </div>
-            </div>
-        
-   
-   
-   
-   
-
-    <footer class = "col-12 p2 border">
-      <h2 class= "m0">Group 007</h2>
-      </footer>
-    </main>
-</div>
-
-
-
-
-
-
-
-
-
-
-<!--
-<div class="flex flex-column" style="min-height:60vh">
-    <header class="p2 border">
-      <h1 class="h2 m0">Flex Object Holy Grail</h1>
-    </header>
-    <div class="flex-auto sm-flex">
-      <main class="flex-auto p2">
-        <h1>Main content</h1>
-        <p>Sorry it's not 100% responsive, but the sidebars have to be fixed width for this demo.</p>
-      </main>
-      <nav class="flex-first border" style="width:8rem">
-        <ul class="list-reset mt2 mb2">
-          <li><a href="#" class="btn block">Link</a></li>
-          <li><a href="#" class="btn block">Link</a></li>
-          <li><a href="#" class="btn block">Link</a></li>
-        </ul>
-      </nav>
-      <aside class="p2 border" style="width:8rem">
-        <p>Sidebar</p>
-      </aside>
-    </div>
-    <footer class="p2 border">
-      <p class="m0">Footer</p>
-    </footer>
-  </div>-->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/spotify_api.js"></script>
-</body>
-
 </html>

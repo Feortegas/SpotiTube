@@ -1,6 +1,6 @@
 const clientId = '742933e984264544aeda659ff45f37e3';
 const clientSecret = 'fad863044e2045feb5d32139ded127c3';
-var searchFormEl = document.querySelector("#user-form");
+var searchFormEl = document.querySelector(".btn-info");
 var h1El = document.querySelector("#playlist-name");
 var coverEl = document.querySelector("#playlist-cover");
 var tracksEl = document.querySelector("#song-list");
@@ -84,15 +84,15 @@ var _createTrackList = function(playlist) {
     // update h1 element with Playlist name
     h1El.textContent = playlist.name;
     coverEl.setAttribute("src", playlist.images[0].url);
-
     // dynamically greate track list
-    for (let index = 0; index < playlist.tracks.total; index++) {
-        
+    for (let index = 0; index < playlist.tracks.total - 45; index++) {
+        console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
         var trackEl = document.createElement("li");
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
+        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name);
     }
 };
 
@@ -111,8 +111,8 @@ var formSubmitHandler = function(event) {
             artistNameEl.value = "";
         }
         else {
-            alert("Pleasej enter a valid Artist name");
+            alert("Please enter a valid Artist name");
         }
 };
 
-searchFormEl.addEventListener("submit", formSubmitHandler);
+searchFormEl.addEventListener("click", formSubmitHandler);

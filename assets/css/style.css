@@ -1,22 +1,6 @@
-.container{
-  font-family: fantasy;
-  background-color: rgb(0, 174, 255);
-  flex-grow: 0;
-  color: cornsilk;
-  padding: 0rem;
-}
-
 .head {
   text-align: center;
   color: blue;
- 
-}
-.navbar{
-  font-family: fantasy;
-  background-color: rgb(0, 174, 255);
-  flex-grow: 0;
-  color: cornsilk;
-  padding: 0rem;
 }
 .main{
   background-color: blue;
@@ -25,5 +9,22 @@
 
 /* My changes */
 nav {
+    background-color: rgb(0, 174, 255);
+}
+
+.container h6 {
+    color: black;
+    font-family: fantasy;
+}
+
+.vid-container {
     background-color: grey;
+}
+
+footer {
+    background-color: rgb(0, 174, 255);
+}
+
+#playlist-cover {
+max-width: 60%;
 }
