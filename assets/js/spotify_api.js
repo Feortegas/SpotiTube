@@ -85,14 +85,14 @@ var _createTrackList = function(playlist) {
     h1El.textContent = playlist.name;
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
-    for (let index = 0; index < playlist.tracks.total - 45; index++) {
+    for (let index = 0; index < 3; index++) {
         console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
         var trackEl = document.createElement("li");
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
-        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name);
+        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
     }
 };
 
@@ -107,8 +107,11 @@ var formSubmitHandler = function(event) {
         var artistName = artistNameEl.value.trim();
 
         if (artistName) {
-            getSpotifyApiData(artistName);
+            tracksEl.innerHTML = "";
+            document.querySelector("#videowrapper").innerHTML = "";
             artistNameEl.value = "";
+            getSpotifyApiData(artistName);
+
         }
         else {
             alert("Please enter a valid Artist name");
