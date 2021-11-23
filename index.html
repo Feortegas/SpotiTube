@@ -31,44 +31,52 @@
     </div>
   </navbar>
   <!--Sidedbar-->
-  <main class="">
+  <main class="row">
     <div class="clearfix border">
       <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
         <div class="flex flex-wrap content-stretch border">
           <div style="min-height: 128px">
             <div class="md-col md-col-3 flex-border">
               <h1 class="left">This is{Artist's Name}</h1>
+
               <ul id="song-list">
-                <!-- <li> to be put in dynamically for song search history -->
+              <!-- <li class="playlist">Playlist</li>
+                <li class="songs">Songs</li>
+                <li class="bio">Bio</li>
+                <li class="albums">Albums</li>
+              <li> to be put in dynamically for song search history -->
               </ul>
             </div>
           </div>
         </div>
       </div>
+    
       <!--  video column-->
-      <div class="clearfix border">
+   <div class="clearfix border">
         <div class="sm-col sm-col-6 md-col-5 lg-col-4 border">
-          <h1 class="center-align">Video's</h1>
-        </div>
+          <h1 class="center">Video's</h1>
         <div id="wrapper">
-          <div id="video-0" class="container"></div>
+          <div class="col-1">
+        <!-- <div id="video-0" class="placeholder"></div>
 
-          <div id="video-1" class="container"></div>
+          <div id="video-1" class="placeholder"></div>
 
-          <div id="video-2" class="container"></div>
+          <div id="video-2" class="placeholder"></div>
 
-          <div id="video-3" class="container"></div>
+          <div id="video-3" class="placeholder"></div>
 
-          <div id="video-4" class="container"></div>
+          <div id="video-4" class="placeholder"></div> -->
+        </div>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="col-12"></div>
-  
-      </footer>
+   </div>
   </main>
-  <script src="./assets/js/script.js"></script>
-</body>
+    <!-- footer-->
+   <div class="overflow-hidden border rounded">
+        <div class="p2">SpotiTube brought to you by Group007</div>
+   </div>
 
+  <script src="./assets/js/script.js"></script>
+  </body>
 </html>

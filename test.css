@@ -1,24 +1,52 @@
 .container{
     font-family: fantasy;
-    background-color: rgb(0, 174, 255);
+    background-color: maroon;
     flex-grow: 0;
-    color: cornsilk;
+    color: gold;
     padding: 0rem;
 }
 
 .head {
     text-align: center;
-    color: blue;
-   
+    color: maroon;
+    background-color: gold;
+    
+ 
 }
-.navbar{
+
+.nav{
     font-family: fantasy;
-    background-color: rgb(0, 174, 255);
+    background-color: maroon
     flex-grow: 0;
-    color: cornsilk;
+    color: gold;
     padding: 0rem;
 }
-.main{
-    background-color: blue;
+
+
+.row{
+    background-color: maroon;
+    margin: max-height;
+    color: gold;
+
 
 }
+
+    
+
+.p2{
+    font-family: fantasy;
+    background-color: maroon;
+    color: gold;
+}
+
+
+ .clearfix{
+     font-family: fantasy;
+     backgroune-color: maroon;
+     color: gold;
+ }
+
+
+
+
+
