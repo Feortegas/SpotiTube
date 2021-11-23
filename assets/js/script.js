@@ -52,8 +52,10 @@ var getChannel = function (channel) {
         forUsername: channel
     })
     .then(function(response){
-        console.log(response);
+        response.json().then(function (data) {
+            console.log(data);
     })
+})
     .catch(function (error) {
         alert("No Channel By That Name");
       });
