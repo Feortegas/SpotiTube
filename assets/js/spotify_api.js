@@ -84,7 +84,7 @@ var _createTrackList = function(playlist) {
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
     //playlist.tracks.total
-    for (let index = 0; index < 15; index++) {
+    for (let index = 0; index < 3; index++) {
         console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
@@ -92,10 +92,7 @@ var _createTrackList = function(playlist) {
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
 
-        // ASK TA TONIGHT!
-        // setTimeout(function() {
-            getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
-        // }, 5000);
+        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
 
     }
 };
@@ -112,7 +109,7 @@ var formSubmitHandler = function(event) {
 
         if (artistName) {
             tracksEl.innerHTML = "";
-            document.querySelector("#videowrapper").innerHTML = "";
+            document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
             artistNameEl.value = "";
             getSpotifyApiData(artistName);
 

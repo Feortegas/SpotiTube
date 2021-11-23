@@ -8,7 +8,6 @@ var searchInput = document.querySelector("#artistId");
 
 
 
-
 // Get Artist *working*
 var getData = function(artist, song, index) {
     // Format the YouTube API url
@@ -24,18 +23,14 @@ var getData = function(artist, song, index) {
           response.json().then(function (data) {
             console.log(data);
 
-            // if ((data.items[0].snippet.title).includes("(Official Music Video)")) {
-              var thumbnailEl = document.createElement("div");
-              thumbnailEl.id = "video-"+index;
-              thumbnailEl.classList = "container inline";
-              document.querySelector("#videowrapper").appendChild(thumbnailEl);
-  
+            if ((data.items[0].snippet.title).includes("(Official Music Video)")) {
+ 
               $(`#video-${index}`).append(`<h6>${data.items[0].snippet.title}</h6>`);
               $(`#video-${index}`).append(`<a href=` + "https://www.youtube.com/watch?v=" + `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`);
 
-            // } else {
-            //   console.log("Track: " + data.items[0].snippet.title + " does not have a Official Video Clip");
-            // }
+            } else {
+              console.log("Track: " + data.items[0].snippet.title + " does not have a Official Video Clip");
+            }
           });
         } else {
           alert("Error: YouTube User Not Found");
