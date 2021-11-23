@@ -48,7 +48,7 @@ var getData = function(artist, song, index) {
 var getChannel = function (channel) {
     //Format the YouTube API url
     gapi.client.youtube.channels.list({
-        part: 'snippet,contentDetails,statistics',
+        part: 'snippet,contentDetails,statistics,id',
         forUsername: channel
     })
     .then(function(response){
