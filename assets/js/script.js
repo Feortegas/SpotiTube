@@ -46,9 +46,10 @@ var getData = function(artist, song, index) {
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
 var getChannel = function (channel) {
+    console.log(channel);
     //Format the YouTube API url
     gapi.client.youtube.channels.list({
-        part: 'snippet,contentDetails,contentOwnerDetails,statistics,id',
+        part: 'snippet,contentDetails,statistics,',
         forUsername: channel
     })
     .then(function(response){
