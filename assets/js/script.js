@@ -11,7 +11,7 @@ var searchInput = document.querySelector("#artistId");
 // Get Artist *working*
 var getData = function(artist, song, index) {
     // Format the YouTube API url
-    var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU`;
+    var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
     var encApoUrl = encodeURI(apiUrl);
     // console.log(encApoUrl);
@@ -44,4 +44,8 @@ var getData = function(artist, song, index) {
   
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
-var searchByChannelName = function () {};
+var getChannel = function (channel) {
+    //Format the YouTube API url
+
+    console.log(channel);
+};
