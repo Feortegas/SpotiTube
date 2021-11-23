@@ -49,7 +49,6 @@ var getChannel = function (channel) {
     //Format the YouTube API url
     gapi.client.youtube.channels.list({
         part: 'snippet,contentDetails,contentOwnerDetails,statistics,id',
-        mine: true,
         forUsername: channel
     })
     .then(function(response){
