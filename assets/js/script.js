@@ -1,21 +1,21 @@
-//Nahom's API key = 'AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I';
+// Team Info
+//Nahom's Youtube API key = 'AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I';
 //Nahom's Youtube Client Id = '471819150021-lt79m6gbg9kdd9s9gk73tbboq7atp4cg.apps.googleusercontent.com'
-//Krita's API key = 'AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q';
-//Fernando's API key = 'AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU';
+//Krita's Youtube API key = 'AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q';
+//Fernando's Youtube API key = 'AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU';
 //Fernando Youtube Cleint Id = '272643493783-for2qk69datv1od5bevqtvb0q2g3tifr.apps.googleusercontent.com';
-//Playlist API = https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=[YOUR_API_KEY]
+
+//Declarations
 var searchInput = document.querySelector("#artistId");
 var IdPlay; 
-//https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q  Playlist API
-//`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channel}&maxResults=5&order=date&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`
 
-// Get Artist *working*
+// Get Artist 
 var getData = function (artist, song, index) {
   // Format the YouTube API url
   var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
   var encApoUrl = encodeURI(apiUrl);
-  // console.log(encApoUrl);
+  
   // Make a request to the url
   fetch(encApoUrl)
     .then(function (response) {
@@ -52,32 +52,7 @@ var getData = function (artist, song, index) {
     });
 };
 
-/*var playList = function(channelId){
-    console.log('53', channelId);
-    //Format playlist URL
-    apiUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
-    console.log(apiUrl);
-
-    var encodePlaylist = encodePlaylist(apiUrl);
-    console.log(encodePlaylist);
-    // Make a request to the url
-    fetch(encodePlaylist)
-      .then(function (response) {
-        //Request was successful
-        if(response.ok) {
-            response.json().then(function(data) {
-                console.log('Line 66', data);
-            });
-        } else {
-            alert("Error: Playlist not found.");
-        }
-    })
-    .catch(function(error) {
-        alert("Error: unable to connect to Spotify");
-    });
-}*/
-
-
+// Called After Sign In; retrieves playlist Id
 var playList = function() {
     return gapi.client.youtube.playlists.list({
       "part": [
@@ -96,6 +71,7 @@ var playList = function() {
   };
 
 
+// Inserts Spotify Track Music Video To Playlist
   var playInsert = function(playListId, videoId) {
       console.log('99', playListId);
       console.log('100', videoId);
