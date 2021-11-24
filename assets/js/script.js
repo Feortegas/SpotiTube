@@ -49,7 +49,7 @@ var getData = function (artist, song, index) {
     });
 };
 
-var playList = function(channelId){
+/*var playList = function(channelId){
     console.log('53', channelId);
     //Format playlist URL
     apiUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
@@ -72,7 +72,24 @@ var playList = function(channelId){
     .catch(function(error) {
         alert("Error: unable to connect to Spotify");
     });
-}
+}*/
+
+
+var playList = function() {
+    return gapi.client.youtube.playlists.list({
+      "part": [
+      "snippet,contentDetails"
+      ],
+      "maxResults": 25,
+      "mine": true
+    })
+    .then(function (response) {
+        console.log('data 86', response)
+      })
+      .catch(function (error) {
+        console.log('yo', `WTF?`);
+      });
+  };
 
 /*function playList(channelId) {
   return gapi.client.youtube.playlists
@@ -91,7 +108,7 @@ var playList = function(channelId){
       });
 }*/
 
-// search YouTube API for Videos by Channel Name and Embeddable videos only
+// Try to get Channel ID from Oauth 2.0 sign in
 var getChannel = function () {
   //console.log(channel);
   //Format the YouTube API url

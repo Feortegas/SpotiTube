@@ -144,6 +144,7 @@
           $('#auth-status').html('You are currently signed in and have granted ' +
               'access to this app.');
               getChannel();
+              playList();
         } else {
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
