@@ -21,7 +21,7 @@ var getData = function (artist, song, index) {
       //Request was successful
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
+          console.log('line 24', data);
 
           if (data.items[0].snippet.title.includes("(Official Music Video)")) {
             $(`#video-${index}`).append(
@@ -32,6 +32,8 @@ var getData = function (artist, song, index) {
                 "https://www.youtube.com/watch?v=" +
                 `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
             );
+            // Playlist Insert Function call
+            playInsert(data.items[0].id.videoId);
           } else {
             console.log(
               "Track: " +
@@ -84,8 +86,8 @@ var playList = function() {
       "mine": true
     })
     .then(function (response) {
-        console.log('data 86', response)
-        //playInsert(response.result.items[0].id, response.result.etag, response.result.items[0].snippet.channelId, response.result.items[0].snippet.title, response.result.items[0].snippet.publishedAt)
+        console.log('data 89', response)
+        playInsert(response.result.items[0].id)
       })
       .catch(function (error) {
         console.log('yo', `WTF?`);
@@ -93,28 +95,27 @@ var playList = function() {
   };
 
 
-// Try to get Channel ID from Oauth 2.0 sign in
-/*var playInsert = function (Id, etag, channelId, title, publish) {
-  //console.log(channel);
-  //Format the YouTube API url-
-  return gapi.client.youtube.playlists.insert({
-    "resource": {
-    "kind": "youtube#playlist",
-    "etag": etag,
-    "id": Id,
-    "snippet": {
-      "publishedAt": publish,
-      "channelId": channelId,
-      "title": title,
-    }
-}
-  })
-    .then(function (response) {
-      console.log('data', response)
-      //console.log("line 78", response.result.items[0].id);
-      playList(response.result.items[0].id);
+  var playInsert = function(playListId, videoId) {
+    return gapi.client.youtube.playlistItems.insert({
+      "part": [
+        "snippet"
+      ],
+      "resource": {
+        "snippet": {
+          "playlistId": playListId,
+          "position": 0,
+          "resourceId": {
+            "kind": "youtube#video",
+            "videoId": videoId
+          }
+        }
+      }
     })
-    .catch(function (error) {
-      console.log('bitch', `WTF?`);
-    });
-};*/
+    .then(function (response) {
+        console.log('115', response)
+      })
+      .catch(function (error) {
+        console.log('bitch', `WTF?`);
+      });
+  };
+    
