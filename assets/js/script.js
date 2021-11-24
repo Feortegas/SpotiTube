@@ -55,7 +55,7 @@ var playList = function(channelId){
         //Request was successful
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                console.log('Line 58', data);
             });
         } else {
             alert("Error: Playlist not found.");
@@ -75,7 +75,7 @@ var getChannel = function () {
         "mine": true
     })
     .then(function(response){
-        console.log(response);
+        console.log('line 78', response.result.items[0].id);
         playList(response.result.items[0].id)
 })
     .catch(function (error) {
