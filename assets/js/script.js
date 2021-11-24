@@ -85,32 +85,16 @@ var playList = function() {
     })
     .then(function (response) {
         console.log('data 86', response)
-        playInsert(response.result.items[0].id, response.result.etag, response.result.items[0].snippet.channelId, response.result.items[0].snippet.title, response.result.items[0].snippet.publishedAt)
+        //playInsert(response.result.items[0].id, response.result.etag, response.result.items[0].snippet.channelId, response.result.items[0].snippet.title, response.result.items[0].snippet.publishedAt)
       })
       .catch(function (error) {
         console.log('yo', `WTF?`);
       });
   };
 
-/*function playList(channelId) {
-  return gapi.client.youtube.playlists
-    .insert({
-      part: ["snippet"],
-      onBehalfOfContentOwnerChannel: channelId,
-      resource: {},
-    })
-    .then(
-      function (response) {
-        // Handle the results here (response.result has the parsed body).
-        console.log("Response", response);
-      })
-      .catch(function (error) {
-        alert("No Channel By That Name");
-      });
-}*/
 
 // Try to get Channel ID from Oauth 2.0 sign in
-var playInsert = function (Id, etag, channelId, title, publish) {
+/*var playInsert = function (Id, etag, channelId, title, publish) {
   //console.log(channel);
   //Format the YouTube API url-
   return gapi.client.youtube.playlists.insert({
@@ -133,4 +117,4 @@ var playInsert = function (Id, etag, channelId, title, publish) {
     .catch(function (error) {
       console.log('bitch', `WTF?`);
     });
-};
+};*/
