@@ -52,7 +52,8 @@ var getData = function (artist, song, index) {
 var playList = function(channelId){
     console.log('53', channelId);
     //Format playlist URL
-    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwner=${defaultChannel}&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+    console.log(apiURL);
 
     var encodePlaylist = encodePlaylist(apiUrl);
     console.log(encodePlaylist);
@@ -62,7 +63,7 @@ var playList = function(channelId){
         //Request was successful
         if(response.ok) {
             response.json().then(function(data) {
-                console.log('Line 58', data);
+                console.log('Line 66', data);
             });
         } else {
             alert("Error: Playlist not found.");
@@ -91,13 +92,13 @@ var playList = function(channelId){
 }*/
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
-var getChannel = function (channel) {
+var getChannel = function () {
   //console.log(channel);
   //Format the YouTube API url
   gapi.client.youtube.channels
     .list({
-      part: ["snippet,contentDetails,statistics"],
-      forUsername: channel
+      "part": ["snippet,contentDetails,statistics"],
+      "mine": true
     })
     .then(function (response) {
       console.log('data', response)
