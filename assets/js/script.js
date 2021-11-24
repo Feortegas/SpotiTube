@@ -49,9 +49,10 @@ var getData = function (artist, song, index) {
     });
 };
 
-/*var playList = function(channelId){
+var playList = function(channelId){
+    console.log('53', channelId);
     //Format playlist URL
-    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
     var encodePlaylist = encodePlaylist(apiUrl);
     console.log(encodePlaylist);
@@ -70,9 +71,9 @@ var getData = function (artist, song, index) {
     .catch(function(error) {
         alert("Error: unable to connect to Spotify");
     });
-}*/
+}
 
-function playList(channelId) {
+/*function playList(channelId) {
   return gapi.client.youtube.playlists
     .insert({
       part: ["snippet"],
@@ -87,7 +88,7 @@ function playList(channelId) {
       .catch(function (error) {
         alert("No Channel By That Name");
       });
-}
+}*/
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
 var getChannel = function () {
@@ -99,7 +100,8 @@ var getChannel = function () {
       mine: true,
     })
     .then(function (response) {
-      console.log("line 78", response.result.items[0].id);
+      console.log('data', response)
+      //console.log("line 78", response.result.items[0].id);
       playList(response.result.items[0].id);
     })
     .catch(function (error) {
