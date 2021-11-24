@@ -62,7 +62,7 @@ var playList = function() {
       "mine": true
     })
     .then(function (response) {
-        //console.log('data 89', response)
+        console.log('Returns playlist data: ', response)
         IdPlay = response.result.items[0].id;
       })
       .catch(function (error) {
