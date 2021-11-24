@@ -12,7 +12,7 @@ var IdPlay;
 // Get Artist 
 var getData = function (artist, song, index) {
   // Format the YouTube API url
-  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU`;
 
   var encApoUrl = encodeURI(apiUrl);
   
