@@ -85,6 +85,7 @@ var playList = function() {
     })
     .then(function (response) {
         console.log('data 86', response)
+        playInsert(response.result.items[0].id, response.result.etag, response.result.items[0].snippet.channelId, response.result.items[0].snippet.title, response.result.items[0].snippet.publishedAt)
       })
       .catch(function (error) {
         console.log('yo', `WTF?`);
@@ -109,14 +110,21 @@ var playList = function() {
 }*/
 
 // Try to get Channel ID from Oauth 2.0 sign in
-var getChannel = function () {
+var playInsert = function (Id, etag, channelId, title, publish) {
   //console.log(channel);
-  //Format the YouTube API url
-  gapi.client.youtube.channels
-    .list({
-      "part": ["snippet,contentDetails,statistics"],
-      "mine": true
-    })
+  //Format the YouTube API url-
+  return gapi.client.youtube.playlists.insert({
+    "resource": {
+    "kind": "youtube#playlist",
+    "etag": etag,
+    "id": Id,
+    "snippet": {
+      "publishedAt": publish,
+      "channelId": channelId,
+      "title": title,
+    }
+}
+  })
     .then(function (response) {
       console.log('data', response)
       //console.log("line 78", response.result.items[0].id);
@@ -126,3 +134,6 @@ var getChannel = function () {
       console.log('bitch', `WTF?`);
     });
 };
+
+
+  }
