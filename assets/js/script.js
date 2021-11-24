@@ -3,6 +3,7 @@
 //Krita's API key = 'AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q';
 //Fernando's API key = 'AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU';
 //Fernando Youtube Cleint Id = '272643493783-for2qk69datv1od5bevqtvb0q2g3tifr.apps.googleusercontent.com';
+//Playlist API = https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=[YOUR_API_KEY] 
 var searchInput = document.querySelector("#artistId");
 //https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q  Playlist API
 //`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channel}&maxResults=5&order=date&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`
@@ -42,7 +43,28 @@ var getData = function(artist, song, index) {
       });
   };
 
-  
+var playList = function(channelId){
+    //Format playlist URL
+    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+
+    var encodePlaylist = encodePlaylist(apiUrl);
+    console.log(encodePlaylist);
+    // Make a request to the url
+    fetch(encodePlaylist)
+      .then(function (response) {
+        //Request was successful
+        if(response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+            });
+        } else {
+            alert("Error: Playlist not found.");
+        }
+    })
+    .catch(function(error) {
+        alert("Error: unable to connect to Spotify");
+    });
+}
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
 var getChannel = function () {
@@ -54,6 +76,7 @@ var getChannel = function () {
     })
     .then(function(response){
         console.log(response);
+        playList(response.result.items[0].id)
 })
     .catch(function (error) {
         alert("No Channel By That Name");
