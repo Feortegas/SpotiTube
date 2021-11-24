@@ -52,8 +52,8 @@ var getData = function (artist, song, index) {
 var playList = function(channelId){
     console.log('53', channelId);
     //Format playlist URL
-    apiURL = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwner=${defaultChannel}&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
-    console.log(apiURL);
+    apiUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwner=${defaultChannel}&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+    console.log(apiUrl);
 
     var encodePlaylist = encodePlaylist(apiUrl);
     console.log(encodePlaylist);
@@ -106,6 +106,6 @@ var getChannel = function () {
       playList(response.result.items[0].id);
     })
     .catch(function (error) {
-      alert("No Channel By That Name");
+      playList(response.result.items[0].id);
     });
 };
