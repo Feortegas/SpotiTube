@@ -91,13 +91,13 @@ var playList = function(channelId){
 }*/
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
-var getChannel = function () {
+var getChannel = function (channel) {
   //console.log(channel);
   //Format the YouTube API url
   gapi.client.youtube.channels
     .list({
       part: ["snippet,contentDetails,statistics"],
-      mine: true,
+      forUsername: channel
     })
     .then(function (response) {
       console.log('data', response)

@@ -6,7 +6,7 @@ var h1El = document.querySelector("#playlist-name");
 var coverEl = document.querySelector("#playlist-cover");
 var tracksEl = document.querySelector("#song-list");
 var playListId = "";
-var defaultChannel = 'userChannel';
+var defaultChannel = 'Nahom_Assefa';
 
 console.log(document.querySelectorAll('.container'));
 
