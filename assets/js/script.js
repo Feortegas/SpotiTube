@@ -22,7 +22,7 @@ var getData = function (artist, song, index) {
       //Request was successful
       if (response.ok) {
         response.json().then(function (data) {
-          console.log('line 24', data);
+          //console.log('line 24', data);
 
           if (data.items[0].snippet.title.includes("(Official Music Video)")) {
             $(`#video-${index}`).append(
@@ -62,7 +62,7 @@ var playList = function() {
       "mine": true
     })
     .then(function (response) {
-        console.log('data 89', response)
+        //console.log('data 89', response)
         IdPlay = response.result.items[0].id;
       })
       .catch(function (error) {

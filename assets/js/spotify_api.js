@@ -8,7 +8,7 @@ var tracksEl = document.querySelector("#song-list");
 var playListId = "";
 var defaultChannel = 'Nahom_Assefa';
 
-console.log(document.querySelectorAll('.container'));
+//console.log(document.querySelectorAll('.container'));
 
 // Get Token
 var getSpotifyApiData = function(theSearch) {
@@ -45,7 +45,7 @@ var _getPlaylist = function(_token, _playListId) {
     }).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                //console.log(data);
                 _createTrackList(data);
             });
         } else {
@@ -88,7 +88,7 @@ var _createTrackList = function(playlist) {
     // dynamically greate track list
     //playlist.tracks.total
     for (let index = 0; index < 10; index++) {
-        console.log(playlist.tracks.items[index].track.name);
+        //console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
         var trackEl = document.createElement("li");
