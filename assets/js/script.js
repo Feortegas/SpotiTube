@@ -66,7 +66,7 @@ var playList = function() {
         IdPlay = response.result.items[0].id;
       })
       .catch(function (error) {
-        console.log('yo', `WTF?`);
+        console.log('catch error retrieve playlist function');
       });
   };
 
@@ -91,10 +91,10 @@ var playList = function() {
       }
     })
     .then(function (response) {
-        console.log('115', response)
+        console.log('Playlist creation', response)
       })
       .catch(function (error) {
-        console.log('bitch', `WTF?`);
+        console.log('Catch error playlist insert function');
       });
   };
     
