@@ -5,6 +5,7 @@
 //Fernando Youtube Cleint Id = '272643493783-for2qk69datv1od5bevqtvb0q2g3tifr.apps.googleusercontent.com';
 //Playlist API = https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=[YOUR_API_KEY]
 var searchInput = document.querySelector("#artistId");
+var IdPlay; 
 //https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwnerChannel=UCkDDetCtGc5_qOu9kNjVShw&key=AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q  Playlist API
 //`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=${channel}&maxResults=5&order=date&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`
 
@@ -33,7 +34,7 @@ var getData = function (artist, song, index) {
                 `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
             );
             // Playlist Insert Function call
-            playInsert(data.items[0].id.videoId);
+            playInsert(IdPlay, data.items[0].id.videoId);
           } else {
             console.log(
               "Track: " +
@@ -87,7 +88,7 @@ var playList = function() {
     })
     .then(function (response) {
         console.log('data 89', response)
-        playInsert(response.result.items[0].id)
+        IdPlay = response.result.items[0].id;
       })
       .catch(function (error) {
         console.log('yo', `WTF?`);
