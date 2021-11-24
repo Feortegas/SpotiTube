@@ -52,7 +52,7 @@ var getData = function (artist, song, index) {
 var playList = function(channelId){
     console.log('53', channelId);
     //Format playlist URL
-    apiUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&onBehalfOfContentOwner=${defaultChannel}&onBehalfOfContentOwnerChannel=${channelId}&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+    apiUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&maxResults=25&mine=true&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
     console.log(apiUrl);
 
     var encodePlaylist = encodePlaylist(apiUrl);
