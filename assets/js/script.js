@@ -96,6 +96,8 @@ var playList = function() {
 
 
   var playInsert = function(playListId, videoId) {
+      console.log('99', playListId);
+      console.log('100', videoId);
     return gapi.client.youtube.playlistItems.insert({
       "part": [
         "snippet"
