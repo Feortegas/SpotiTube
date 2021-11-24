@@ -106,6 +106,6 @@ var getChannel = function () {
       playList(response.result.items[0].id);
     })
     .catch(function (error) {
-      playList(response.result.items[0].id);
+      console.log('bitch', `WTF?`);
     });
 };
