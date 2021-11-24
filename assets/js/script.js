@@ -83,11 +83,10 @@ function playList(channelId) {
       function (response) {
         // Handle the results here (response.result has the parsed body).
         console.log("Response", response);
-      },
-      function (err) {
-        console.error("Execute error", err);
-      }
-    );
+      })
+      .catch(function (error) {
+        alert("No Channel By That Name");
+      });
 }
 
 // search YouTube API for Videos by Channel Name and Embeddable videos only
