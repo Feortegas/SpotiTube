@@ -134,6 +134,3 @@ var playInsert = function (Id, etag, channelId, title, publish) {
       console.log('bitch', `WTF?`);
     });
 };
-
-
-  }
