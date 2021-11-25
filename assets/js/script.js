@@ -24,7 +24,7 @@ var getData = function (artist, song, index) {
         response.json().then(async function (data) {
           //console.log('line 24', data);
 
-          if (data.items[0].snippet.title.includes("(Official Music Video)" || "(Official Video)")) {
+          if (data.items[0].snippet.title.includes("(Official Music Video)") || data.items[0].snippet.title.includes("(Official Video)")) {
             $(`#video-${index}`).append(
               `<h6>${data.items[0].snippet.title}</h6>`
             );
