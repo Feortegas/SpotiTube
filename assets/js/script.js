@@ -10,7 +10,7 @@ var searchInput = document.querySelector("#artistId");
 var IdPlay; 
 
 // Get Artist 
-var getData = async function (artist, song, index) {
+var getData = function (artist, song, index) {
   // Format the YouTube API url
   var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
@@ -21,7 +21,7 @@ var getData = async function (artist, song, index) {
     .then(function (response) {
       //Request was successful
       if (response.ok) {
-        response.json().then(function (data) {
+        response.json().then(async function (data) {
           //console.log('line 24', data);
 
           if (data.items[0].snippet.title.includes("(Official Music Video)")) {
