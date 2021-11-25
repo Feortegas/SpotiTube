@@ -10,7 +10,7 @@ var searchInput = document.querySelector("#artistId");
 var IdPlay; 
 
 // Get Artist 
-var getData = function (artist, song, index) {
+var getData = async function (artist, song, index) {
   // Format the YouTube API url
   var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
@@ -34,7 +34,7 @@ var getData = function (artist, song, index) {
                 `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
             );
             // Playlist Insert Function call
-            setTimeout(playInsert(IdPlay, data.items[0].id.videoId), 2000);
+            await playInsert(IdPlay, data.items[0].id.videoId);
           } else {
             console.log(
               "Track: " +
