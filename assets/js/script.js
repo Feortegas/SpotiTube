@@ -34,7 +34,7 @@ var getData = function (artist, song, index) {
                 `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
             );
             // Playlist Insert Function call
-            setTimeout(playInsert(IdPlay, data.items[0].id.videoId), 2000);
+            playInsert(IdPlay, data.items[0].id.videoId);
           } else {
             console.log(
               "Track: " +
