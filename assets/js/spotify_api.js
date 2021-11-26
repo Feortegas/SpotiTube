@@ -87,7 +87,7 @@ var _createTrackList = function(playlist) {
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
     //playlist.tracks.total
-    for (let index = 0; index < 15; index++) {
+    for (let index = 0; index < 10; index++) {
         //console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
