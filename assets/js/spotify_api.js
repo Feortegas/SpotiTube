@@ -95,7 +95,7 @@ var _createTrackList = function(playlist) {
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
 
-        // getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
+        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
 
     }
 };
