@@ -60,14 +60,16 @@ var getData = function () {
       alert("Unable to connect to YouTube");
     });
 }
-videoArr.forEach(function(video){
-    playInsert(IdPlay, video);
-})
+JSON.parse(localStorage.getItem("videoId")).forEach(function(video){
+console.log(video);
+playInsert(IdPlay, video);
+});
 };
 
 var saveVideoId = function() {
     localStorage.setItem("videoId", videoArr);
 }
+
 
 // Called After Sign In; retrieves playlist Id
 var playList = function() {
