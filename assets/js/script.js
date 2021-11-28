@@ -9,11 +9,12 @@
 var IdPlay; 
 var playlistArr = [];
 var artistArr = [];
+var videoArr = [];
 
 // Get Artist 
 var getData = function () {
   var artist = localStorage.getItem("artist");
-  /*for(let index=0; index < playlistArr.length; index++) {
+  for(let index=0; index < playlistArr.length; index++) {
   // Format the YouTube API url
   var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${playlistArr[index]}&maxResults=1&type=video&key=AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU`;
 
@@ -28,12 +29,14 @@ var getData = function () {
 
           if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
 
+            // push to video array
+            videoArr.push(data.items[0].id.videoId);
+            console.log(videoArr);
+
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).className = "card";
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
-
-
 
 
             // $(`#video-${index}`).append(
@@ -62,7 +65,7 @@ var getData = function () {
     .catch(function (error) {
       alert("Unable to connect to YouTube");
     });
-}*/
+}
 };
 
 // Called After Sign In; retrieves playlist Id

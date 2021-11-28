@@ -88,7 +88,7 @@ var _createTrackList = function(playlist) {
     var artistName = playlist.tracks.items[0].track.artists[0].name;
     artistArr.push(artistName);
     // dynamically greate track list
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 5; index++) {
         //console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
 
