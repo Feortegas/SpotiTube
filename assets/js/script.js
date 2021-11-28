@@ -106,8 +106,14 @@ var playInsert = function (playListId, videoId) {
 };
 
 // Insert Music Videos to YouTube Playlist button event listener
-document.querySelector("#insert-youtube").addEventListener("click", function(){
-  for (let index = 0; index < videoArr.length; index++) {
-      playInsert(IdPlay, videoArr[index]);
-  }
+document.querySelector("#insert-youtube-0").addEventListener("click", function(){
+  playInsert(IdPlay, videoArr[0]);
+});
+
+document.querySelector("#insert-youtube-1").addEventListener("click", function(){
+  playInsert(IdPlay, videoArr[1]);
+});
+
+document.querySelector("#insert-youtube-2").addEventListener("click", function(){
+  playInsert(IdPlay, videoArr[2]);
 });
