@@ -10,262 +10,138 @@
   </head>
 
   <body>
-    <!-- navigation bar -->
-    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-      <!-- brand -->
-      <div class="navbar-brand navbar-start">
-        <a class="navbar-item" href="https://feortegas.github.io/SpotiTube/">
-          <img src="./assets/images/spotitube.png" width="112" height="28">
-        </a>
-      </div>
-      <!-- search spotify -->
-      <div class="navbar-item navbar-end">
-        <div id="user-form" class="field has-addons">
-          <div class="control">
-            <input id="search-text" class="input" type="text" placeholder="Playlist">
+    <section class="hero is-dark is-medium">
+      <div class="hero-head">
+        <!-- navigation bar -->
+        <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+          <!-- brand -->
+          <div class="navbar-brand navbar-start">
+            <a class="navbar-item" href="https://feortegas.github.io/SpotiTube/">
+              <img src="./assets/images/spotitube.png" width="112" height="28">
+            </a>
           </div>
-          <div class="control">
-            <button id="search-spotify" class="button is-success">Search Spotify</button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- hero - playlist name, made by -->
-    <section class="hero is-success">
-      <div class="hero-body">
-        <div class="columns">
-          <div class="column is-3">
-            <img id="playlist-cover" >
-          </div>
-          <div class="column is-9">
-            <p id="playlist-name" class="title">
-              Playlist name
-            </p>
-            <p id="playlist-made-by"class="subtitle">
-              created by
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- main content -->
-    <div class="columns">
-      <div class="column is-3">
-        <ol id="song-list"></ol>
-      </div>
-      <div class="column is-9">
-
-        <div class="columns is-desktop">
-
-          <div class="column">
-            <!-- card video-0 -->
-            <div id="card-0" class="card is-hidden">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img id="video-0" src="" alt="Placeholder image">
-                </figure>
+          <!-- search spotify -->
+          <div class="navbar-item navbar-end">
+            <div id="user-form" class="field has-addons">
+              <div class="control">
+                <input id="search-text" class="input" type="text" placeholder="Playlist Name">
               </div>
-              <div class="card-content">
-                <div id="title-0" class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-                </div>
+              <div class="control">
+                <button id="search-spotify" class="button is-success">Search Spotify</button>
               </div>
             </div>
           </div>
+        </nav>
 
-          <div class="column">
-            <!-- card video-1 -->
-            <div id="card-1" class="card is-hidden">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img id="video-1" src="" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div id="title-1" class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <!-- card video-2 -->
-            <div id="card-2" class="card is-hidden">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img id="video-2" src="" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div id="title-2" class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- <div id="wrapper" class="">
-      <section class="">
-        <h4 id="playlist-name">Track Title</h4>
-
-        <div class="">
-          <div class="">
+        <!-- hero - playlist name, made by -->
+        <div class="hero-body">
+          <div class="columns">
+            <div class="column is-3">
               <img id="playlist-cover" >
-            <ol id="song-list"> -->
-             <!-- Dynamically appending <li> -->
-            <!-- </ol>
-          </div>
-        </div>
-      </section>
-      <main id="mainBody" class="">
-        <div class="">
-          <h2>Artist and Track Name</h2>
-            <div id= "videowrapper" class= "">
-                <div id= "video-0" class= "container inline video-div"></div>
-                <div id= "video-1" class= "container inline video-div"></div>
-                <div id= "video-2" class= "container inline video-div"></div>
-                <div id= "video-3" class= "container inline video-div"></div>
-                <div id= "video-4" class= "container inline video-div"></div>
-                <div id= "video-5" class= "container inline video-div"></div>
-                <div id= "video-6" class= "container inline video-div"></div> 
-                <div id= "video-7" class= "container inline video-div"></div>
-                <div id= "video-8" class= "container inline video-div"></div>
-                <div id= "video-9" class= "container inline video-div"></div>
-                <div id= "video-10" class= "container inline video-div"></div>
-                <div id= "video-11" class= "container inline video-div"></div>
-                <div id= "video-12" class= "container inline video-div"></div>
             </div>
-            <div id="player"></div>
-        </div>
+            <div class="column is-9">
+              <p id="playlist-name" class="title"></p>
+              <!-- <p id="playlist-made-by"class="subtitle"></p> -->
+            </div>
+          </div>
 
-        <footer class="">
-          <h2 class="">Group 007</h2>
-        </footer>
-      </main>
-    </div> -->
+          <!-- main content -->
+          <div class="columns mt-3">
+            <!-- <div class="column is-3">
+              <ol id="song-list" class="pl-6"></ol>
+            </div> -->
+            <div class="column is-12">
 
+              <div class="columns is-desktop">
 
-    <!-- YouTube sign in script section -->
-    <script>
-      var GoogleAuth;
-      var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
-      var CLIENT_ID = '471819150021-lt79m6gbg9kdd9s9gk73tbboq7atp4cg.apps.googleusercontent.com';
-      var apiKey = 'AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I';
-      function handleClientLoad() {
-        // Load the API's client and auth2 modules.
-        // Call the initClient function after the modules load.
-        gapi.load('client:auth2', initClient);
-      }
-    
-      function initClient() {
-        // In practice, your app can retrieve one or more discovery documents.
-        var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
-    
-        // Initialize the gapi.client object, which app uses to make API requests.
-        // Get API key and client ID from API Console.
-        // 'scope' field specifies space-delimited list of access scopes.
-        gapi.client.init({
-            'apiKey': apiKey,
-            'clientId': CLIENT_ID,
-            'discoveryDocs': [discoveryUrl],
-            'scope': SCOPE
-        }).then(function () {
-          GoogleAuth = gapi.auth2.getAuthInstance();
-    
-          // Listen for sign-in state changes.
-          GoogleAuth.isSignedIn.listen(updateSigninStatus);
-    
-          // Handle initial sign-in state. (Determine if user is already signed in.)
-          var user = GoogleAuth.currentUser.get();
-          setSigninStatus();
-    
-          // Call handleAuthClick function when user clicks on
-          //      "Sign In/Authorize" button.
-          $('#sign-in-or-out-button').click(function() {
-            handleAuthClick();
-          });
-          $('#revoke-access-button').click(function() {
-            revokeAccess();
-          });
-        });
-      }
-    
-      function handleAuthClick() {
-        if (GoogleAuth.isSignedIn.get()) {
-          // User is authorized and has clicked "Sign out" button.
-          GoogleAuth.signOut();
-        } else {
-          // User is not signed in. Start Google auth flow.
-          GoogleAuth.signIn();
-        }
-      }
-    
-      function revokeAccess() {
-        GoogleAuth.disconnect();
-      }
-    
-      function setSigninStatus() {
-        var user = GoogleAuth.currentUser.get();
-        var isAuthorized = user.hasGrantedScopes(SCOPE);
-        if (isAuthorized) {
-          $('#sign-in-or-out-button').html('Sign out');
-          $('#revoke-access-button').css('display', 'inline-block');
-          $('#auth-status').html('You are currently signed in and have granted ' +
-              'access to this app.');
-              playList();
-        } else {
-          $('#sign-in-or-out-button').html('Sign In/Authorize');
-          $('#revoke-access-button').css('display', 'none');
-          $('#auth-status').html('You have not authorized this app or you are ' +
-              'signed out.');
-        }
-      }
-    
-      function updateSigninStatus() {
-        setSigninStatus();
-      }
-    </script>
-    
+                <div class="column">
+                  <!-- card video-0 -->
+                  <div id="card-0" class="card is-hidden">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img id="video-0" src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div id="title-0" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <!-- card video-1 -->
+                  <div id="card-1" class="card is-hidden">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img id="video-1" src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div id="title-1" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <!-- card video-2 -->
+                  <div id="card-2" class="card is-hidden">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img id="video-2" src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div id="title-2" class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> <!-- hero body end--> 
+
+      </div> <!-- hero head end--> 
+    </section> <!-- hero end--> 
+
+    <!-- Google sign in butttons -->
     <button id="sign-in-or-out-button"
             style="margin-left: 25px">Sign In/Authorize</button>
-    <button id="revoke-access-button"
-            style="display: none; margin-left: 25px">Revoke access</button>
-    
+
     <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
+
+      <!-- footer -->
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p><strong>SpotiTube</strong> by </p>
+            <p><a href="https://feortegas.github.io/personal-portfolio/">Fernando Ortega</a></p>
+            <p><a href="https://nahom-assefa.github.io/Professional-Portfolio/">Nahom Assefa</a></p>
+            <p><a href="https://github.com/Fens05">Krista Meyer</a></p>
+        </div>
+      </footer>
+
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js"
-            onload="this.onload=function(){};handleClientLoad()"
-            onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
 
-
-<!-- footer -->
-<footer class="footer">
-  <div class="content has-text-centered is-dark">
-    <p><strong>SpotiTube</strong> by </p>
-      <p><a href="https://feortegas.github.io/personal-portfolio/">Fernando Ortega</a></p>
-      <p><a href="https://nahom-assefa.github.io/Professional-Portfolio/">Nahom Assefa</a></p>
-      <p><a href="https://github.com/Fens05">Krista Meyer</a></p>
-  </div>
-</footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="./assets/js/googleAuth.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/spotify_api.js"></script>
   </body>
