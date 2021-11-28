@@ -87,17 +87,17 @@ var _createTrackList = function(playlist) {
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
     //playlist.tracks.total
-    // for (let index = 0; index < 10; index++) {
-    //     //console.log(playlist.tracks.items[index].track.name);
-    //     var trackName = playlist.tracks.items[index].track.name;
+    for (let index = 0; index < 10; index++) {
+        //console.log(playlist.tracks.items[index].track.name);
+        var trackName = playlist.tracks.items[index].track.name;
 
-    //     var trackEl = document.createElement("li");
-    //     trackEl.textContent = trackName;
-    //     tracksEl.appendChild(trackEl);
+        var trackEl = document.createElement("li");
+        trackEl.textContent = trackName;
+        tracksEl.appendChild(trackEl);
 
-    //     getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
+        // getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
 
-    // }
+    }
 };
 
 // search Spotify for Playlist

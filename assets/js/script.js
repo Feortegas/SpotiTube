@@ -6,7 +6,7 @@
 //Fernando Youtube Cleint Id = '272643493783-for2qk69datv1od5bevqtvb0q2g3tifr.apps.googleusercontent.com';
 
 //Declarations
-var searchInput = document.querySelector("#artistId");
+// var searchInput = document.querySelector("#artistId");
 var IdPlay; 
 
 // Get Artist 
@@ -21,20 +21,27 @@ var getData = function (artist, song, index) {
     .then(function (response) {
       //Request was successful
       if (response.ok) {
-        response.json().then(async function (data) {
+        response.json().then(function (data) {
           //console.log('line 24', data);
 
-          if (data.items[0].snippet.title.includes("(Official Music Video)")) {
-            $(`#video-${index}`).append(
-              `<h6>${data.items[0].snippet.title}</h6>`
-            );
-            $(`#video-${index}`).append(
-              `<a href=` +
-                "https://www.youtube.com/watch?v=" +
-                `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
-            );
+          if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
+
+            // insert thumbnails data into bulma css cards
+            document.querySelector(`#card-${index}`).className = "card";
+            document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
+            document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
+
+
+            // $(`#video-${index}`).append(
+            //   `<h6>${data.items[0].snippet.title}</h6>`
+            // );
+            // $(`#video-${index}`).append(
+            //   `<a href=` +
+            //     "https://www.youtube.com/watch?v=" +
+            //     `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
+            // );
             // Playlist Insert Function call
-            await playInsert(IdPlay, data.items[0].id.videoId);
+            // playInsert(IdPlay, data.items[0].id.videoId);
           } else {
             console.log(
               "Track: " +
