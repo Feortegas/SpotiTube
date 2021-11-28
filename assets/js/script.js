@@ -75,10 +75,10 @@ var getData = function () {
 
 //read video array and insert it to the YouTube playlist
 console.log('videArr', videoArr);
-videoArr.forEach(function(video) {
-    console.log(video);
-    playInsert(IdPlay, video);
-});
+for (let index = 0; index < videoArr.length; index++) {
+    console.log('inside loop', videoArr);
+    playInsert(IdPlay, videoArr[index]);
+}
 };
 
 var saveVideoId = function () {
