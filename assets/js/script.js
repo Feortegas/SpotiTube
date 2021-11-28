@@ -32,6 +32,8 @@ var getData = function (artist, song, index) {
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
 
 
+
+            
             // $(`#video-${index}`).append(
             //   `<h6>${data.items[0].snippet.title}</h6>`
             // );
