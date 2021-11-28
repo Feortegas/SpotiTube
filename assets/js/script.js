@@ -31,6 +31,7 @@ var getData = function () {
 
             // push to video array
             videoArr.push(data.items[0].id.videoId);
+            saveVideoId();
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).className = "card";
@@ -69,6 +70,10 @@ videoArr.forEach(function(video){
     playInsert(IdPlay, video);
 })
 };
+
+var saveVideoId = function() {
+    localStorage.setItem("videoId", videoArr);
+}
 
 // Called After Sign In; retrieves playlist Id
 var playList = function() {

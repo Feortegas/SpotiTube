@@ -97,14 +97,14 @@ var _createTrackList = function(playlist) {
         tracksEl.appendChild(trackEl);
 
         playlistArr.push(trackName);
-        saveStorage();
+        saveSpotify();
         //getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
     }
     getData();
 };
 
 // function for local storage 
-var saveStorage = function() {
+var saveSpotify = function() {
     localStorage.setItem("artist", artistArr);
     localStorage.setItem("tracks", playlistArr);
 }
