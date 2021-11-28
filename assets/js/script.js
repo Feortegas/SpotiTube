@@ -15,14 +15,13 @@ var getData = function () {
   var artist = localStorage.getItem("artist");
   console.log('artist', artist);
   console.log('playlist', playlistArr.length);
- // for(let i=0; i < playlistArr.length; i++) {
-  var song = localStorage.getItem("tracks");
+  for(let i=0; i < playlistArr.length; i++) {
   // Format the YouTube API url
-  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${i}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
   var encApoUrl = encodeURI(apiUrl);
   console.log('url', encApoUrl);
- // }
+  }
   // Make a request to the url
   /*fetch(encApoUrl)
     .then(function (response) {
