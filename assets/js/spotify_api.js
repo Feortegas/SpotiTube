@@ -95,7 +95,7 @@ var _createTrackList = function(playlist) {
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
 
-        trackName.push(playlistArr);
+        playlistArr.push(trackName);
         console.log(playlistArr);
         //getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
 
