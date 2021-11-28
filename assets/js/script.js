@@ -27,7 +27,7 @@ var getData = function (artist, song, index) {
           if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
 
             // insert thumbnails data into bulma css cards
-            document.querySelector(`#card-${index}`).className = "card";
+            document.querySelector(`#card-${index}`).classList.remove = "is-hidden";
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
 
