@@ -8,14 +8,19 @@
 //Declarations
 var IdPlay; 
 var playlistArr = [];
+var artistArr = [];
 
 // Get Artist 
-var getData = function (artist, song, index) {
+var getData = function () {
+  var artist = localStorage.getItem("artist");
+
+ // for(let i=0; i < playlistArr.length; i++) {
+  var song = localStorage.getItem("tracks");
   // Format the YouTube API url
   var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${song}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
   var encApoUrl = encodeURI(apiUrl);
-  
+ // }
   // Make a request to the url
   fetch(encApoUrl)
     .then(function (response) {
@@ -24,7 +29,7 @@ var getData = function (artist, song, index) {
         response.json().then(function (data) {
           //console.log('line 24', data);
 
-          if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
+          if (data.items[0].snippet.title.includes("(Official Music Video)") && playlistArr.length < 3) {
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).className = "card";
@@ -33,7 +38,7 @@ var getData = function (artist, song, index) {
 
 
 
-            
+
             // $(`#video-${index}`).append(
             //   `<h6>${data.items[0].snippet.title}</h6>`
             // );
