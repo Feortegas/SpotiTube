@@ -85,7 +85,7 @@ var _createTrackList = function(playlist) {
     // update h1 element with Playlist name
     h1El.textContent = playlist.name;
     coverEl.setAttribute("src", playlist.images[0].url);
-    var artistName = playlist.tracks.items[index].track.artists[0].name;
+    var artistName = playlist.tracks.items[0].track.artists[0].name;
     artistArr.push(artistName);
     // dynamically greate track list
     for (let index = 0; index < 10; index++) {
