@@ -27,11 +27,10 @@ var getData = function () {
         response.json().then(function (data) {
           //console.log('line 24', data);
 
-          if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
+          if (data.items[0] && data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
 
             // push to video array
             videoArr.push(data.items[0].id.videoId);
-            console.log(videoArr);
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).className = "card";
@@ -66,6 +65,9 @@ var getData = function () {
       alert("Unable to connect to YouTube");
     });
 }
+videoArr.forEach(function(video){
+    playInsert(IdPlay, video);
+})
 };
 
 // Called After Sign In; retrieves playlist Id

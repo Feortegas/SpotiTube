@@ -122,6 +122,7 @@ var searchSpotifyHandler = function() {
         if (playlistName) {
             // tracksEl.innerHTML = "";
             // document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
+            localStorage.clear();
             playlistNameEl.value = "";
             getSpotifyApiData(playlistName);
 
