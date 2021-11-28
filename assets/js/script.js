@@ -67,11 +67,18 @@ var getData = function () {
         alert("Unable to connect to YouTube");
       });
   }
-  console.log("Line70");
-  JSON.parse(localStorage.getItem("videoId")).forEach(function (video) {
+//   console.log("Line70");
+//   JSON.parse(localStorage.getItem("videoId")).forEach(function (video) {
+//     console.log(video);
+//     playInsert(IdPlay, video);
+//   });
+
+//read video array and insert it to the YouTube playlist
+console.log('videArr', videoArr);
+videoArr.forEach(function(video) {
     console.log(video);
     playInsert(IdPlay, video);
-  });
+});
 };
 
 var saveVideoId = function () {
