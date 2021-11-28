@@ -36,16 +36,10 @@ var getData = function () {
               videoArr.push(data.items[0].id.videoId);
               saveVideoId();
 
-              // insert thumbnails data into bulma css cards
-              document.querySelector(`#card-${index}`).className = "card";
-              document
-                .querySelector(`#video-${index}`)
-                .setAttribute(
-                  "src",
-                  data.items[0].snippet.thumbnails.default.url
-                );
-              document.querySelector(`#title-${index}`).textContent =
-                data.items[0].snippet.title;
+            // insert thumbnails data into bulma css cards
+            document.querySelector(`#card-${index}`).classList.remove = "is-hidden";
+            document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
+            document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
 
               // $(`#video-${index}`).append(
               //   `<h6>${data.items[0].snippet.title}</h6>`

@@ -40,7 +40,7 @@
               <img id="playlist-cover" >
             </div>
             <div class="column is-9">
-              <p id="playlist-name" class="title">Search for your Spotify Playlist</p>
+              <p id="playlist-name" class="title">Search for a Spotify Playlist</p>
               <!-- <p id="playlist-made-by"class="subtitle"></p> -->
               <ol id="song-list" class="pl-6"></ol>
             </div>
@@ -53,14 +53,11 @@
               <div id="card-0" class="card is-hidden">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img id="video-0" alt="Placeholder image">
+                    <img id="video-0">
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div id="title-0" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-                  </div>
+                  <div id="title-0" class="content"></div>
                 </div>
               </div>
             </div>
@@ -70,14 +67,11 @@
               <div id="card-1" class="card is-hidden">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img id="video-1" alt="Placeholder image">
+                    <img id="video-1">
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div id="title-1" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-                  </div>
+                  <div id="title-1" class="content"></div>
                 </div>
               </div>
             </div>
@@ -87,14 +81,11 @@
               <div id="card-2" class="card is-hidden">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img id="video-2" alt="Placeholder image">
+                    <img id="video-2">
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div id="title-2" class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-                  </div>
+                  <div id="title-2" class="content"></div>
                 </div>
               </div>
             </div>
@@ -106,10 +97,10 @@
     </section> <!-- hero end--> 
 
     <!-- Google sign in butttons -->
-    <button id="sign-in-or-out-button"
+    <!-- <button id="sign-in-or-out-button"
             style="margin-left: 25px">Sign In/Authorize</button>
 
-    <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
+    <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr> -->
 
     <button id= "insert-youtube"> Insert Youtube </button> 
 
@@ -123,10 +114,42 @@
         </div>
       </footer>
 
+      <!-- modal -->
+      <div class="modal" id="tutorial-modal">
+        <div class="modal-background" id="tutorial-modal-bg">
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">SpotiTube Tutorial</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <h1>Welcome to Spotitube Tutorial</h1>
+              <p>
+                SpotiTube is a web app that will allow you to search for a Spotify Playlist, then searches in YouTube for Official Music Videos of the Tracks in the Playlist. 
+                You will have the option to Automatically create a YouTube Playlist and add those Music Videos to your Playlist (requires Google Authentication). 
+                You can also add the Music Videos to an existing Playlist of your choice.
+              </p>
+              <ol>
+                <li>Search for a Spotify Playlist</li>
+                <li>SpotiTube will display all the Tracks on the Spotify Playlist and below it, all the YouTube Official Music Videos found</li>
+                <li>Now you have the option to login to your Google Account and allow SpotiTube to create a Playlist Automatically, or add the Music Videos to an existing Playlist.</li>
+                <li>Repeat with another Playlist search</li>
+              </ol>
+              <img src="./assets/images/spotitube-tutorial-modal.png" alt="Tutorial website screenshot with instructions">
+            </section>
+            <footer class="modal-card-foot">
+              <button id="sign-in-or-out-button" class="button is-danger">Login to Google</button>
+              <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
+            </footer>
+          </div>
+        </div>
+      </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="./assets/js/index.js"></script>
     <script src="./assets/js/googleAuth.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script async defer src="https://apis.google.com/js/api.js"
