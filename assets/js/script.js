@@ -49,12 +49,6 @@ var getData = function () {
             // );
             // Playlist Insert Function call
             // playInsert(IdPlay, data.items[0].id.videoId);
-          } else {
-            console.log(
-              "Track: " +
-                data.items[0].snippet.title +
-                " does not have a Official Video Clip"
-            );
           }
         
         });
