@@ -13,24 +13,20 @@ var artistArr = [];
 // Get Artist 
 var getData = function () {
   var artist = localStorage.getItem("artist");
-  console.log('artist', artist);
-  console.log('playlist', playlistArr.length);
-  for(let i=0; i < playlistArr.length; i++) {
+  for(let index=0; index < playlistArr.length; index++) {
   // Format the YouTube API url
-  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${playlistArr[i]}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
+  var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${playlistArr[index]}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
   var encApoUrl = encodeURI(apiUrl);
-  console.log('url', encApoUrl);
-  }
   // Make a request to the url
-  /*fetch(encApoUrl)
+  fetch(encApoUrl)
     .then(function (response) {
       //Request was successful
       if (response.ok) {
         response.json().then(function (data) {
           //console.log('line 24', data);
 
-          if (data.items[0].snippet.title.includes("(Official Music Video)") && playlistArr.length < 3) {
+          if (data.items[0].snippet.title.includes("(Official Music Video)") && index < 3) {
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).className = "card";
@@ -57,6 +53,7 @@ var getData = function () {
                 " does not have a Official Video Clip"
             );
           }
+        
         });
       } else {
         alert("Error: YouTube User Not Found");
@@ -64,7 +61,8 @@ var getData = function () {
     })
     .catch(function (error) {
       alert("Unable to connect to YouTube");
-    });*/
+    });
+}
 };
 
 // Called After Sign In; retrieves playlist Id
