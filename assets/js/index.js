@@ -1,3 +1,7 @@
+// ***
+// General purpose script file
+// ***
+
 const tutorialModalEl = document.querySelector("#tutorial-modal");
 const tutorialModalBgEl = document.querySelector("#tutorial-modal-bg");
 

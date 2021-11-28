@@ -1,3 +1,7 @@
+// ***
+// YouTube API script file
+// ***
+
 // Team Info
 //Nahom's Youtube API key = 'AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I';
 //Nahom's Youtube Client Id = '471819150021-lt79m6gbg9kdd9s9gk73tbboq7atp4cg.apps.googleusercontent.com'
@@ -41,16 +45,6 @@ var getData = function () {
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
 
-              // $(`#video-${index}`).append(
-              //   `<h6>${data.items[0].snippet.title}</h6>`
-              // );
-              // $(`#video-${index}`).append(
-              //   `<a href=` +
-              //     "https://www.youtube.com/watch?v=" +
-              //     `${data.items[0].id.videoId} target="_blank"> <img src=${data.items[0].snippet.thumbnails.default.url}></a>`
-              // );
-              // Playlist Insert Function call
-              // playInsert(IdPlay, data.items[0].id.videoId);
             }
           });
         } else {
@@ -61,12 +55,6 @@ var getData = function () {
         alert("Unable to connect to YouTube");
       });
   }
-//   console.log("Line70");
-//   JSON.parse(localStorage.getItem("videoId")).forEach(function (video) {
-//     console.log(video);
-//     playInsert(IdPlay, video);
-//   });
-
 
 };
 
@@ -117,11 +105,9 @@ var playInsert = function (playListId, videoId) {
     });
 };
 
+// Insert Music Videos to YouTube Playlist button event listener
 document.querySelector("#insert-youtube").addEventListener("click", function(){
-//read video array and insert it to the YouTube playlist
-console.log('videoArr', videoArr);
-for (let index = 0; index < videoArr.length; index++) {
-    console.log('inside loop', videoArr);
-    playInsert(IdPlay, videoArr[index]);
-}
+  for (let index = 0; index < videoArr.length; index++) {
+      playInsert(IdPlay, videoArr[index]);
+  }
 });

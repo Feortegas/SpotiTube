@@ -1,3 +1,7 @@
+// ***
+// YouTube Authentication API script file
+// ***
+
 var GoogleAuth;
       var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
       var CLIENT_ID = '471819150021-lt79m6gbg9kdd9s9gk73tbboq7atp4cg.apps.googleusercontent.com';

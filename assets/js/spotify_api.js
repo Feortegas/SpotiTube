@@ -1,3 +1,7 @@
+// ***
+// Spotify API script file
+// ***
+
 // Declarations
 const clientId = '742933e984264544aeda659ff45f37e3';
 const clientSecret = 'fad863044e2045feb5d32139ded127c3';
