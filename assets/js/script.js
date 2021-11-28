@@ -73,12 +73,7 @@ var getData = function () {
 //     playInsert(IdPlay, video);
 //   });
 
-//read video array and insert it to the YouTube playlist
-console.log('videArr', videoArr);
-for (let index = 0; index < videoArr.length; index++) {
-    console.log('inside loop', videoArr);
-    playInsert(IdPlay, videoArr[index]);
-}
+
 };
 
 var saveVideoId = function () {
@@ -127,3 +122,12 @@ var playInsert = function (playListId, videoId) {
       console.log("Catch error playlist insert function");
     });
 };
+
+document.querySelector("#insert-youtube").addEventListener("click", function(){
+//read video array and insert it to the YouTube playlist
+console.log('videoArr', videoArr);
+for (let index = 0; index < videoArr.length; index++) {
+    console.log('inside loop', videoArr);
+    playInsert(IdPlay, videoArr[index]);
+}
+});
