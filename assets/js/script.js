@@ -6,8 +6,8 @@
 //Fernando Youtube Cleint Id = '272643493783-for2qk69datv1od5bevqtvb0q2g3tifr.apps.googleusercontent.com';
 
 //Declarations
-// var searchInput = document.querySelector("#artistId");
 var IdPlay; 
+var playlistArr = [];
 
 // Get Artist 
 var getData = function (artist, song, index) {
