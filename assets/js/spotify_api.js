@@ -87,34 +87,34 @@ var _createTrackList = function(playlist) {
     coverEl.setAttribute("src", playlist.images[0].url);
     // dynamically greate track list
     //playlist.tracks.total
-    for (let index = 0; index < 10; index++) {
-        //console.log(playlist.tracks.items[index].track.name);
-        var trackName = playlist.tracks.items[index].track.name;
+    // for (let index = 0; index < 10; index++) {
+    //     //console.log(playlist.tracks.items[index].track.name);
+    //     var trackName = playlist.tracks.items[index].track.name;
 
-        var trackEl = document.createElement("li");
-        trackEl.textContent = trackName;
-        tracksEl.appendChild(trackEl);
+    //     var trackEl = document.createElement("li");
+    //     trackEl.textContent = trackName;
+    //     tracksEl.appendChild(trackEl);
 
-        getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
+    //     getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
 
-    }
+    // }
 };
 
-// Form event handler - TEMPORARY HTML
-var formSubmitHandler = function(event) {
+// search Spotify for Playlist
+var searchSpotifyHandler = function() {
     // prevent page from refreshing
-    event.preventDefault();
+    // event.preventDefault();
 
-        var artistNameEl = document.querySelector("#artistId");
+        var playlistNameEl = document.querySelector("#search-text");
 
         // get value from input element
-        var artistName = artistNameEl.value.trim();
+        var playlistName = playlistNameEl.value.trim();
 
-        if (artistName) {
-            tracksEl.innerHTML = "";
-            document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
-            artistNameEl.value = "";
-            getSpotifyApiData(artistName);
+        if (playlistName) {
+            // tracksEl.innerHTML = "";
+            // document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
+            playlistNameEl.value = "";
+            getSpotifyApiData(playlistName);
 
         }
         else {
@@ -122,4 +122,6 @@ var formSubmitHandler = function(event) {
         }
 };
 
-searchFormEl.addEventListener("click", formSubmitHandler);
+// searchFormEl.addEventListener("click", formSubmitHandler);
+
+document.querySelector("#search-spotify").addEventListener("click", searchSpotifyHandler);

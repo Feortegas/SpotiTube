@@ -3,56 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/basscss-responsive-margin@1.1.0/css/responsive-margin.css"
-      rel="stylesheet"
-    />
-    <link href="./assets/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- <link href="./assets/css/style.css" rel="stylesheet" /> -->
     <title>SpotiTube</title>
   </head>
 
   <body>
-    <nav class="clearfix white bg-black">
-      <div class="sm-col">
-        <h1><strong>SpotiTube</strong></h1>
+    <!-- navigation bar -->
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <!-- brand -->
+      <div class="navbar-brand navbar-start">
+        <a class="navbar-item" href="https://feortegas.github.io/SpotiTube/">
+          <img src="./assets/images/spotitube.png" width="112" height="28">
+        </a>
       </div>
-      <div class="sm-col-right">
-        <form id="user-form">
-          <h5>Search Your Favorite Musical Artist</h5>
-          <label class="form-label" for="artistId"></label>
-          <input
-            name="artistId"
-            id="artistId"
-            type="text"
-            autofocus="true"
-            class="form-input"
-          />
-          <button type="submit" class="btn-info">Search</button>
-        </form>
+      <!-- search spotify -->
+      <div class="navbar-item navbar-end">
+        <div id="user-form" class="field has-addons">
+          <div class="control">
+            <input id="search-text" class="input" type="text" placeholder="Playlist">
+          </div>
+          <div class="control">
+            <button id="search-spotify" class="button is-success">Search Spotify</button>
+          </div>
+        </div>
       </div>
     </nav>
-    <div id="wrapper" class="clearfix border flex-auto">
-      <section class="col-12 lg-col-2 left flex-first border">
-        <h4 id= "playlist-name">Track Title</h4>
 
-        <div class="card">
-          <div class="card-body">
-              <img id= "playlist-cover" >
-            <ol id="song-list">
+    <!-- hero - playlist name, made by -->
+    <section class="hero is-success">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-3">
+            <img id="playlist-cover" >
+          </div>
+          <div class="column is-9">
+            <p id="playlist-name" class="title">
+              Playlist name
+            </p>
+            <p id="playlist-made-by"class="subtitle">
+              created by
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- main content -->
+    <div class="columns">
+      <div class="column is-3">
+        <ol id="song-list"></ol>
+      </div>
+      <div class="column is-9">Thumbnails area</div>
+    </div>
+
+
+    <!-- <div id="wrapper" class="">
+      <section class="">
+        <h4 id="playlist-name">Track Title</h4>
+
+        <div class="">
+          <div class="">
+              <img id="playlist-cover" >
+            <ol id="song-list"> -->
              <!-- Dynamically appending <li> -->
-            </ol>
+            <!-- </ol>
           </div>
         </div>
       </section>
-      <main id="mainBody" class="flex flex-column" style="min-height: 60vh">
-        <div class="vid-container border lg-col-12 col border flex-auto p2">
+      <main id="mainBody" class="">
+        <div class="">
           <h2>Artist and Track Name</h2>
-            <div id= "videowrapper" class= "flex flex-wrap">
+            <div id= "videowrapper" class= "">
                 <div id= "video-0" class= "container inline video-div"></div>
                 <div id= "video-1" class= "container inline video-div"></div>
                 <div id= "video-2" class= "container inline video-div"></div>
@@ -70,13 +93,14 @@
             <div id="player"></div>
         </div>
 
-        <footer class="col-12 p2 border">
-          <h2 class="m0">Group 007</h2>
+        <footer class="">
+          <h2 class="">Group 007</h2>
         </footer>
       </main>
-    </div>
+    </div> -->
 
 
+    <!-- YouTube sign in script section -->
     <script>
       var GoogleAuth;
       var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
@@ -169,6 +193,17 @@
             onload="this.onload=function(){};handleClientLoad()"
             onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="content has-text-centered is-dark">
+    <p><strong>SpotiTube</strong> by </p>
+      <p><a href="https://feortegas.github.io/personal-portfolio/">Fernando Ortega</a></p>
+      <p><a href="https://nahom-assefa.github.io/Professional-Portfolio/">Nahom Assefa</a></p>
+      <p><a href="https://github.com/Fens05">Krista Meyer</a></p>
+  </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
