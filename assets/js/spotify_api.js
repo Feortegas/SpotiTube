@@ -96,11 +96,15 @@ var _createTrackList = function(playlist) {
         tracksEl.appendChild(trackEl);
 
         playlistArr.push(trackName);
-        console.log(playlistArr);
+        saveStorage();
         //getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
-
     }
 };
+
+// function for local storage 
+var saveStorage = function() {
+    localStorage.setItem("trackKey", playlistArr )
+}
 
 // search Spotify for Playlist
 var searchSpotifyHandler = function() {
