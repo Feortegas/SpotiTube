@@ -85,19 +85,18 @@ var _createTrackList = function(playlist) {
     // update h1 element with Playlist name
     h1El.textContent = playlist.name;
     coverEl.setAttribute("src", playlist.images[0].url);
+    var artistName = playlist.tracks.items[index].track.artists[0].name;
+    artistArr.push(artistName);
     // dynamically greate track list
-    //playlist.tracks.total
     for (let index = 0; index < 10; index++) {
         //console.log(playlist.tracks.items[index].track.name);
         var trackName = playlist.tracks.items[index].track.name;
-        var artistName = playlist.tracks.items[index].track.artists[0].name;
 
         var trackEl = document.createElement("li");
         trackEl.textContent = trackName;
         tracksEl.appendChild(trackEl);
 
         playlistArr.push(trackName);
-        artistArr.push(artistName);
         saveStorage();
         //getData(playlist.tracks.items[index].track.artists[0].name, playlist.tracks.items[index].track.name, index);
     }

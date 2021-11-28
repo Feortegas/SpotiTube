@@ -13,7 +13,8 @@ var artistArr = [];
 // Get Artist 
 var getData = function () {
   var artist = localStorage.getItem("artist");
-
+  console.log(artist);
+  console.log(playlistArr.length);
  // for(let i=0; i < playlistArr.length; i++) {
   var song = localStorage.getItem("tracks");
   // Format the YouTube API url
