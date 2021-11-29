@@ -14,6 +14,7 @@ var IdPlay;
 var playlistArr = [];
 var artistArr = [];
 var videoArr = [];
+var usersPlaylistsArr = [];
 
 // Get Artist
 var getData = function () {
@@ -29,8 +30,6 @@ var getData = function () {
         //Request was successful
         if (response.ok) {
           response.json().then(function (data) {
-            //console.log('line 24', data);
-
             if (
               data.items[0] &&
               data.items[0].snippet.title.includes("(Official Music Video)") &&
@@ -44,6 +43,7 @@ var getData = function () {
             document.querySelector(`#card-${index}`).classList.remove = "is-hidden";
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
+            document.querySelector("#insert-youtube").classList.remove("is-hidden");
 
             }
           });
@@ -71,7 +71,6 @@ var playList = function () {
       mine: true,
     })
     .then(function (response) {
-      console.log("Returns playlist data: ", response);
       IdPlay = response.result.items[0].id;
     })
     .catch(function (error) {
@@ -81,8 +80,6 @@ var playList = function () {
 
 // Inserts Spotify Track Music Video To Playlist
 var playInsert = function (playListId, videoId) {
-  console.log("99", playListId);
-  console.log("100", videoId);
   return gapi.client.youtube.playlistItems
     .insert({
       part: ["snippet"],
@@ -106,14 +103,9 @@ var playInsert = function (playListId, videoId) {
 };
 
 // Insert Music Videos to YouTube Playlist button event listener
-document.querySelector("#insert-youtube-0").addEventListener("click", function(){
-  playInsert(IdPlay, videoArr[0]);
-});
-
-document.querySelector("#insert-youtube-1").addEventListener("click", function(){
-  playInsert(IdPlay, videoArr[1]);
-});
-
-document.querySelector("#insert-youtube-2").addEventListener("click", function(){
-  playInsert(IdPlay, videoArr[2]);
+document.querySelector("#insert-youtube").addEventListener("click", function(){
+  for (let index = 0; index < videoArr.length; index++) {
+      playInsert(IdPlay, videoArr[index]);
+  }
+  document.querySelector("#insert-youtube").classList.add("is-hidden");
 });

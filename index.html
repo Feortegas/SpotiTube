@@ -20,8 +20,23 @@
               <img src="./assets/images/spotitube.png" width="112" height="28">
             </a>
           </div>
-          <!-- search spotify -->
+          
           <div class="navbar-item navbar-end">
+            <!-- Insert tracks to YouTube -->
+            <div class="navbar-item">
+              <div class="buttons">
+                <button id= "insert-youtube" class="button is-danger is-hidden">Insert to YouTube Playlist</button>
+              </div>
+            </div>
+            <!-- Google Sign in -->
+            <div class="navbar-item">
+              <div class="buttons">
+                <button id="sign-in-or-out-button" class="button is-danger">
+                  <strong>Google Sign in</strong>
+                </button>
+              </div>
+            </div>
+            <!-- search spotify -->
             <div id="user-form" class="field has-addons">
               <div class="control">
                 <input id="search-text" class="input" type="text" placeholder="Playlist Name">
@@ -59,7 +74,7 @@
                 <div class="card-content">
                   <div id="title-0" class="content"></div>
                   <footer class="card-footer">
-                    <button id= "insert-youtube-0" class="card-footer-item button is-danger"> Add to Youtube </button> 
+                    <!-- <button id= "insert-youtube" class="card-footer-item button is-danger"> Watch on Youtube </button>  -->
                   </footer>
                 </div>
               </div>
@@ -77,7 +92,7 @@
                   <div id="title-1" class="content"></div>
                 </div>
                 <footer class="card-footer">
-                  <button id= "insert-youtube-1" class="card-footer-item button is-danger"> Add to Youtube </button> 
+                  <!-- <button id= "insert-youtube-1" class="card-footer-item button is-danger"> Watch on Youtube </button>  -->
                 </footer>
               </div>
             </div>
@@ -93,7 +108,7 @@
                 <div class="card-content">
                   <div id="title-2" class="content"></div>
                   <footer class="card-footer">
-                    <button id= "insert-youtube-2" class="card-footer-item button is-danger"> Add to Youtube </button> 
+                    <!-- <button id= "insert-youtube-2" class="card-footer-item button is-danger"> Watch on Youtube </button>  -->
                   </footer>
                 </div>
               </div>
@@ -119,7 +134,8 @@
           <p><strong>SpotiTube</strong> by </p>
             <p><a href="https://feortegas.github.io/personal-portfolio/">Fernando Ortega</a></p>
             <p><a href="https://nahom-assefa.github.io/Professional-Portfolio/">Nahom Assefa</a></p>
-            <p><a href="https://github.com/Fens05">Krista Meyer</a></p>
+            <!-- Couldn't find Krista's Personal Portifolio page on her GitHub Repos -->
+            <p><a href="https://github.com/Fens05">Krista Meyer</a></p> 
         </div>
       </footer>
 
@@ -141,13 +157,14 @@
               <ol>
                 <li>Search for a Spotify Playlist</li>
                 <li>SpotiTube will display all the Tracks on the Spotify Playlist and below it, all the YouTube Official Music Videos found</li>
-                <li>Now you have the option to login to your Google Account and allow SpotiTube to create a Playlist Automatically, or add the Music Videos to an existing Playlist.</li>
+                <li>If you're already not signed in with your Google Account, please do it now (button on the top navigation bar)</li>
+                <li>Now, for this demo, you have to have a Playlist already createad on your YouTube channel. SpotiTube will add the Music Videos to that existing Playlist.</li>
                 <li>Repeat with another Playlist search</li>
               </ol>
               <img src="./assets/images/spotitube-tutorial-modal.png" alt="Tutorial website screenshot with instructions">
             </section>
             <footer class="modal-card-foot">
-              <button id="sign-in-or-out-button" class="button is-danger">Login to Google</button>
+              <!-- <button id="sign-in-or-out-button" class="button is-danger">Login to Google</button> -->
               <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
             </footer>
           </div>

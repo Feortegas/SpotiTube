@@ -57,6 +57,8 @@ var GoogleAuth;
         var isAuthorized = user.hasGrantedScopes(SCOPE);
         if (isAuthorized) {
           $('#sign-in-or-out-button').html('Sign out');
+          document.querySelector('#sign-in-or-out-button').classList.remove("is-danger");
+          document.querySelector('#sign-in-or-out-button').classList.add("is-success");
           $('#auth-status').html('You are currently signed in and have granted ' +
               'access to this app.');
               playList();
