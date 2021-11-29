@@ -31,7 +31,7 @@ var getData = function () {
         if (response.ok) {
           response.json().then(function (data) {
             if (
-              data.items[0] &&
+              //data.items[0] &&
               data.items[0].snippet.title.includes("(Official Music Video)") &&
               index < 3
             ) {
@@ -47,7 +47,7 @@ var getData = function () {
             $(`#title-${index}`).html(data.items[0].snippet.title);
             document.querySelector("#insert-youtube").classList.remove("is-hidden");
             }
-          });
+          })
         } else {
           alert("Error: YouTube User Not Found");
             playlistArr = [];
@@ -58,7 +58,7 @@ var getData = function () {
       })
       .catch(function (error) {
         alert("Unable to connect to YouTube");
-      });
+      })
   }
 
 };
@@ -114,6 +114,9 @@ document.querySelector("#insert-youtube").addEventListener("click", function(){
       console.log('114', videoArr[index]);
       playInsert(IdPlay, videoArr[index]);
   }
+  console.log('117', videoArr);
+  console.log('118', playlistArr);
+  console.log('119', artistArr)
   videoArr = [];
   playlistArr = [];
   artistArr = [];

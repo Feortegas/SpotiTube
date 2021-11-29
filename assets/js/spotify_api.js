@@ -117,6 +117,7 @@ var saveSpotify = function() {
 var searchSpotifyHandler = function() {
     // prevent page from refreshing
     // event.preventDefault();
+    console.log('click is working');
         clearStorage();
 
         var playlistNameEl = document.querySelector("#search-text");
@@ -138,7 +139,9 @@ var searchSpotifyHandler = function() {
 
 // Clear Local Storage function 
 var clearStorage = function() {
-    localStorage.clear();
+    localStorage.removeItem('artist');
+    localStorage.removeItem('tracks');
+    localStorage.removeItem('videoId');
 }
 
 document.querySelector("#search-spotify").addEventListener("click", searchSpotifyHandler);
