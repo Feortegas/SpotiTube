@@ -38,6 +38,7 @@ var getData = function () {
               // push to video array
               videoArr.push(data.items[0].id.videoId);
               saveVideoId();
+              console.log('inside loop', videoArr);
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).classList.remove("is-hidden");
@@ -60,6 +61,7 @@ var getData = function () {
 
 var saveVideoId = function () {
   localStorage.setItem("videoId", videoArr);
+  console.log('64', videoArr);
 };
 
 // Called After Sign In; retrieves playlist Id
@@ -107,5 +109,6 @@ document.querySelector("#insert-youtube").addEventListener("click", function(){
   for (let index = 0; index < videoArr.length; index++) {
       playInsert(IdPlay, videoArr[index]);
   }
+  videoArr = [];
   document.querySelector("#insert-youtube").classList.add("is-hidden");
 });

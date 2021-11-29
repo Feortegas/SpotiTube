@@ -117,7 +117,7 @@ var saveSpotify = function() {
 var searchSpotifyHandler = function() {
     // prevent page from refreshing
     // event.preventDefault();
-    localStorage.clear();
+    window.localStorage.clear();
 
         var playlistNameEl = document.querySelector("#search-text");
 
@@ -126,7 +126,7 @@ var searchSpotifyHandler = function() {
 
         if (playlistName) {
              tracksEl.innerHTML = "";
-            // document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
+            document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
             playlistNameEl.value = "";
             getSpotifyApiData(playlistName);
 
