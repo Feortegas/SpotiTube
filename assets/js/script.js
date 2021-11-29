@@ -40,7 +40,7 @@ var getData = function () {
               saveVideoId();
 
             // insert thumbnails data into bulma css cards
-            document.querySelector(`#card-${index}`).classList.remove = "is-hidden";
+            document.querySelector(`#card-${index}`).classList.remove("is-hidden");
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
             document.querySelector("#insert-youtube").classList.remove("is-hidden");
