@@ -42,12 +42,10 @@ var getData = function () {
               console.log(data);
 
             // insert thumbnails data into bulma css cards
-            //document.querySelector(`#card-${index}`).classList.remove("is-hidden");
-            $(`#card-${index}`).removeClass("is-hidden");
+            document.querySelector(`#card-${index}`).classList.remove("is-hidden");
             $(`#video-${index}`).attr("src", data.items[0].snippet.thumbnails.default.url);
             $(`#title-${index}`).html(data.items[0].snippet.title);
-            //document.querySelector("#insert-youtube").classList.remove("is-hidden");
-            $("#insert-youtube").removeClass("is-hidden");
+            document.querySelector("#insert-youtube").classList.remove("is-hidden");
             }
           })
         } else {
