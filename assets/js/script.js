@@ -111,6 +111,7 @@ var playInsert = function (playListId, videoId) {
 // Insert Music Videos to YouTube Playlist button event listener
 document.querySelector("#insert-youtube").addEventListener("click", function(){
   for (let index = 0; index < videoArr.length; index++) {
+      console.log('114', videoArr[index]);
       playInsert(IdPlay, videoArr[index]);
   }
   videoArr = [];
