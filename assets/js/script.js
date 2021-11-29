@@ -31,7 +31,7 @@ var getData = function () {
         if (response.ok) {
           response.json().then(function (data) {
             if (
-              //data.items[0] &&
+              data.items[0] &&
               data.items[0].snippet.title.includes("(Official Music Video)") &&
               index < 3
             ) {
