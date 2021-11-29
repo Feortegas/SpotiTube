@@ -117,7 +117,7 @@ var saveSpotify = function() {
 var searchSpotifyHandler = function() {
     // prevent page from refreshing
     // event.preventDefault();
-    window.localStorage.clear();
+        clearStorage();
 
         var playlistNameEl = document.querySelector("#search-text");
 
@@ -125,7 +125,7 @@ var searchSpotifyHandler = function() {
         var playlistName = playlistNameEl.value.trim();
 
         if (playlistName) {
-             tracksEl.innerHTML = "";
+            tracksEl.innerHTML = "";
             document.querySelectorAll(".video-div").forEach(function(el) {el.innerHTML=""});
             playlistNameEl.value = "";
             getSpotifyApiData(playlistName);
@@ -136,6 +136,9 @@ var searchSpotifyHandler = function() {
         }
 };
 
-// searchFormEl.addEventListener("click", formSubmitHandler);
+// Clear Local Storage function 
+var clearStorage = function() {
+    Storage.clear();
+}
 
 document.querySelector("#search-spotify").addEventListener("click", searchSpotifyHandler);

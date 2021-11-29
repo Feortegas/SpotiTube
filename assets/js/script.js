@@ -38,7 +38,8 @@ var getData = function () {
               // push to video array
               videoArr.push(data.items[0].id.videoId);
               saveVideoId();
-              console.log('inside loop', videoArr);
+              console.log('inside loop', videoArr)
+              console.log(data);
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).classList.remove("is-hidden");
@@ -110,5 +111,10 @@ document.querySelector("#insert-youtube").addEventListener("click", function(){
       playInsert(IdPlay, videoArr[index]);
   }
   videoArr = [];
+  playlistArr = [];
+  artistArr = [];
+  console.log('videoArr', videoArr);
+  console.log('playlist', playlistArr);
+  console.log('artistArr', artistArr);
   document.querySelector("#insert-youtube").classList.add("is-hidden");
 });
