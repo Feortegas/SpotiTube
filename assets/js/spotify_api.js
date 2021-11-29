@@ -138,7 +138,7 @@ var searchSpotifyHandler = function() {
 
 // Clear Local Storage function 
 var clearStorage = function() {
-    Storage.clear();
+    localStorage.clear();
 }
 
 document.querySelector("#search-spotify").addEventListener("click", searchSpotifyHandler);
