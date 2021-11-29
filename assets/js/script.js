@@ -47,15 +47,13 @@ var getData = function () {
             $(`#title-${index}`).html(data.items[0].snippet.title);
             document.querySelector("#insert-youtube").classList.remove("is-hidden");
             }
-            else {
+          });
+        } else {
+          alert("Error: YouTube User Not Found");
             playlistArr = [];
             artistArr = [];
             console.log('else block', playlistArr);
             console.log('else block 2', artistArr);
-            }
-          });
-        } else {
-          alert("Error: YouTube User Not Found");
         }
       })
       .catch(function (error) {
