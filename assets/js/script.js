@@ -46,7 +46,12 @@ var getData = function () {
             document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
             document.querySelector("#insert-youtube").classList.remove("is-hidden");
-
+            }
+            else {
+            playlistArr = [];
+            artistArr = [];
+            console.log('else block', playlistArr);
+            console.log('else block 2', artistArr);
             }
           });
         } else {
@@ -113,8 +118,8 @@ document.querySelector("#insert-youtube").addEventListener("click", function(){
   videoArr = [];
   playlistArr = [];
   artistArr = [];
-  console.log('videoArr', videoArr);
-  console.log('playlist', playlistArr);
-  console.log('artistArr', artistArr);
+  console.log('videoArr 121', videoArr);
+  console.log('playlist 122', playlistArr);
+  console.log('artistArr 123', artistArr);
   document.querySelector("#insert-youtube").classList.add("is-hidden");
 });
