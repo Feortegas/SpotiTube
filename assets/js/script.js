@@ -43,7 +43,7 @@ var getData = function () {
 
             // insert thumbnails data into bulma css cards
             document.querySelector(`#card-${index}`).classList.remove("is-hidden");
-            document.querySelector(`#video-${index}`).setAttribute("src", data.items[0].snippet.thumbnails.default.url);
+            $(`#video-${index}`).attr("src", data.items[0].snippet.thumbnails.default.url);
             document.querySelector(`#title-${index}`).textContent = data.items[0].snippet.title;
             document.querySelector("#insert-youtube").classList.remove("is-hidden");
             }
