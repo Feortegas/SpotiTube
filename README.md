@@ -15,6 +15,9 @@ There were significant challenges on this project that had a lot to do with trav
 ##### Things To Consider
 When testing clear your broswer data- cookies, search history, cache etc. as we have come to find that does cause some interference in the error 500 we keep seeing on youtube's end. Secondly, log in intially before testing to authorize your consent to have your youtube account modified. Lastly, make sure you have an existing youtube channel and verify that you have a playlist already created with the applicable playlist Id as one of our API's will be looking for that to exist. 
 
+##### Website Screenshot
+<img width="1255" alt="spotitube-tutorial-modal" src="https://user-images.githubusercontent.com/17223625/143802986-9d9e7198-a9a1-4e92-8913-3bb7420d0b90.png">
+
 ###### Deployed Link/ License and Copyright
 https://feortegas.github.io/SpotiTube/
 
