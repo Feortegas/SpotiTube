@@ -21,7 +21,7 @@ var getData = function () {
   var artist = localStorage.getItem("artist");
   for (let index = 0; index < playlistArr.length; index++) {
     // Format the YouTube API url
-    var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${playlistArr[index]}&maxResults=1&type=video&key=AIzaSyA2gSQ1nqtkt0AqrTla0h3si_c5SmquD6Q`;
+    var apiUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}${playlistArr[index]}&maxResults=1&type=video&key=AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I`;
 
     var encApoUrl = encodeURI(apiUrl);
     // Make a request to the url
