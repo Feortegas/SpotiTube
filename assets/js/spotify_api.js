@@ -127,9 +127,10 @@ var searchSpotifyHandler = function() {
 
         if (playlistName) {
             tracksEl.innerHTML = "";
-            $(".column .card").each(function () {
+           
+            $(".video-div").each(function () {
                 console.log($(this));
-                $(this).removeClass("is-hidden");
+                $(this).addClass("is-hidden");
                 //$(this).show();
             });
             playlistNameEl.value = "";
