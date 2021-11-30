@@ -127,7 +127,7 @@ var searchSpotifyHandler = function() {
 
         if (playlistName) {
             tracksEl.innerHTML = "";
-            $("video-div").each(function () {
+            $(".video-div").each(function () {
                 console.log($(this));
                 $(this).removeClass('.is-hidden');
                 $(this).show();
