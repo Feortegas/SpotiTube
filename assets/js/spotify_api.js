@@ -127,10 +127,10 @@ var searchSpotifyHandler = function() {
 
         if (playlistName) {
             tracksEl.innerHTML = "";
-            $(".video-div").each(function () {
+            $(".column .card").each(function () {
                 console.log($(this));
-                $(this).removeClass('.is-hidden');
-                $(this).show();
+                $(this).removeClass("is-hidden");
+                //$(this).show();
             });
             playlistNameEl.value = "";
             getSpotifyApiData(playlistName);
