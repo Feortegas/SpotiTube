@@ -129,7 +129,10 @@ var searchSpotifyHandler = function() {
             tracksEl.innerHTML = "";
             var test = $(".is-4by3").find("img");
             console.log(test);
-            $(".is-4by3").find("img").detach("src");
+            $(".is-4by3 img").each(function () {
+                console.log($(this));
+                $(this).detach('src');
+            });
             playlistNameEl.value = "";
             getSpotifyApiData(playlistName);
 
