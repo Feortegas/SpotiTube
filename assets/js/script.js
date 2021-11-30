@@ -111,17 +111,11 @@ var playInsert = function (playListId, videoId) {
 // Insert Music Videos to YouTube Playlist button event listener
 document.querySelector("#insert-youtube").addEventListener("click", function(){
   for (let index = 0; index < videoArr.length; index++) {
-      console.log('114', videoArr[index]);
       playInsert(IdPlay, videoArr[index]);
   }
-  console.log('117', videoArr);
-  console.log('118', playlistArr);
-  console.log('119', artistArr)
   videoArr = [];
   playlistArr = [];
   artistArr = [];
-  console.log('videoArr 121', videoArr);
-  console.log('playlist 122', playlistArr);
-  console.log('artistArr 123', artistArr);
+  clearStorage();
   document.querySelector("#insert-youtube").classList.add("is-hidden");
 });
