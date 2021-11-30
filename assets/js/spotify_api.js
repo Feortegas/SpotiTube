@@ -129,9 +129,9 @@ var searchSpotifyHandler = function() {
             tracksEl.innerHTML = "";
             var test = $(".is-4by3").find("img");
             console.log(test);
-            $(".is-4by3 img").each(function () {
+            $("video-div").each(function () {
                 console.log($(this));
-                $(this).removeAttr('src');
+                $(this).removeAttr('is-hidden');
                 $(this).show();
             });
             playlistNameEl.value = "";
