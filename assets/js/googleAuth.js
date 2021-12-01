@@ -5,7 +5,7 @@
 var GoogleAuth;
       var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
       var CLIENT_ID = '471819150021-lt79m6gbg9kdd9s9gk73tbboq7atp4cg.apps.googleusercontent.com';
-      var apiKey = 'AIzaSyAwl6OYOGUNSDQLOOk2O7KKDPHJuEI2M-I';
+      var apiKey = 'AIzaSyDXdnp4Wkvmkp2n9E0o8pxdTs16NXePEbU';
       function handleClientLoad() {
         // Load the API's client and auth2 modules.
         // Call the initClient function after the modules load.
