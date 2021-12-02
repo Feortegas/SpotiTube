@@ -119,6 +119,9 @@ var saveSpotify = function () {
 
 // search Spotify for Playlist
 var searchSpotifyHandler = function () {
+  videoArr = [];
+  playlistArr = [];
+  artistArr = [];
   clearStorage();
 
   var playlistNameEl = document.querySelector("#search-text");

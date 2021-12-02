@@ -113,9 +113,6 @@ document.querySelector("#insert-youtube").addEventListener("click", function(){
   for (let index = 0; index < videoArr.length; index++) {
       playInsert(IdPlay, videoArr[index]);
   }
-  videoArr = [];
-  playlistArr = [];
-  artistArr = [];
-  clearStorage();
+  
   document.querySelector("#insert-youtube").classList.add("is-hidden");
 });
