@@ -32,7 +32,7 @@ var getData = function () {
           response.json().then(function (data) {
             if (
               data.items[0] &&
-              (data.items[0].snippet.title.includes("(Official Music Video)") || data.items[0].snippe.title.includes("(Official Video)")) &&
+              (data.items[0].snippet.title.includes("(Official Music Video)") || data.items[0].snippet.title.includes("(Official Video)")) &&
               index < 3
             ) {
               // push to video array
